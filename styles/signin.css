@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+/* font-family: 'Varela Round', sans-serif; */
+
+
+/* Definiendo los colores */
+
+:root{
+    --gris: #EAEFC4;
+    --verdeClaro: #9BDF46;
+    --verdeOscuro: #25A55F;
+    --oscuro: #346473;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(#EAEFC4, #9BDF46);
+    background-attachment: fixed;
+
+}
+.inicial{
+    text-align: center;
+    width: 50%;
+    margin: 5% 25%;
+    display: flex;
+    flex-direction: column;
+}
+.inicial h1{
+    font-size: 3rem;
+}
+.div__inicial{
+    width: 100%;
+    height: 60%;
+}
+.div__inicial h3{
+    margin-bottom: 6%;
+    font-size: 1.3rem;
+    margin-top: 0;
+    font-weight: 300;
+}
+
+.inicial button{
+    cursor: pointer;
+    width: 40%;
+    height: 3.5rem;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--gris);
+    font-weight: 500;
+    font-size: 1rem;
+}
+.inicial button:hover{
+    background-color: var(--oscuro);
+}
+.inicial__secundario{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}    
+.inicial__secundario img{
+    width: 30%;
+}
+.spn__wpp{
+    font-size: 2.5rem;
+    font-family: 'Varela Round', sans-serif;
+}
+
+/* parte responsive */
+
+@media(max-width:500px){
+    main{
+        text-align: center;
+        margin: 0;
+    }
+    .inicial button{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+}
