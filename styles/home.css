@@ -1,0 +1,224 @@
+:root{
+    --colorGris: #ededed;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+.header{
+    width: 100%;
+    height: 20%;
+    background-color: var(--colorGris);
+    display: flex;
+}
+
+.perfil_usuario{
+    width: 30%;
+    border-right: 1px solid grey;
+}
+
+.foto_perfil{
+    height: 50px;
+    border-radius: 50%;
+    width: 50px;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+.perfil_mensaje{
+    width: 70%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+.foto_perfilContacto{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.datos_contacto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 80%;
+}
+
+.nombre_perfil{
+    font-weight: bolder;
+    font-size: 20px;
+}
+.estado_perfil{
+    font-size: 12px;
+    color: grey;
+}
+
+main{
+    height: 80%;
+    display: flex;
+    height: 460px;
+}
+
+.espacio_contactos{
+    width: 29.4%;
+}
+.contenedor_buscar{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(243, 243, 243)
+}
+.buscar_contacto{
+    display: flex;
+    width: 90%;
+    height: 70%;
+    margin-left: 18px;
+    background-color: white;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top:8px;
+}
+.icono_buscar_contacto{
+    margin-left: 1rem;
+}
+.input_buscar_contacto{
+    border: none;
+    width: 80%;
+    margin-left: 1rem;
+    font-size: 17px;
+}
+
+.contenedor_contactos{
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta_contacto{
+    height: 65px;
+    background-color: rgb(253, 254, 254);
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid rgb(171, 171, 171);
+}
+
+.union_foto_contacto{
+    width: 20%;
+}
+.foto_contacto{
+    height: 65%;
+    width: 65%;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+
+.union_mensaje{
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre_dia_mensaje{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0.2rem;
+    padding-right: 0.3rem;
+}
+.nombre_contacto{
+    font-size: 18px;
+    font-weight: bolder;
+}
+.dia_mensaje{
+    color: rgb(107, 107, 107);
+    font-size: 14px;
+}
+
+.icono_texto_mensaje{
+    display: flex;
+    justify-content: flex-start
+}
+.icono_ckeck{
+    height: 16px;
+}
+
+.mensaje_contacto{
+   font-size: 12px;
+   color: rgb(107, 107, 107);
+}
+
+
+.espacio_mensajes{
+    width: 70.6%;
+}
+
+.visualizacion_mensajes{
+    margin: 0;
+    height: 487px;
+    width: 100%;
+    background-image: url(https://i.pinimg.com/originals/d4/63/7b/d4637b476b7b908c9fde1107a83b00fe.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: baseline; */
+}
+
+.dia_envio_mensaje{
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: rgb(217, 235, 250);
+    border-radius: 8px;
+    max-width: max-content;
+    align-self: center;
+}
+
+.mensaje_entrada{
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: rgb(253, 248, 248);
+    max-width: 50%;
+    display: flex;
+    align-content: start;
+    margin-left: 1rem;
+}
+
+.mensaje_salida{ 
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: rgb(210, 255, 199);
+    max-width: 50%;
+    display: flex;
+    align-content:end;
+    /* position: relative; */
+    /* left: 500px;    */
+    
+    /* display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    background-color: rgb(210, 255, 199);
+    width: 50%;
+    margin-left: 450px;
+    align-items:center; */
+}
+
+.escribir_mensajes{
+    height: 60px;
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    align-items: center;
+}
+
+.input_mensaje{
+    width: 84%;
+    height:60%;
+    border-radius: 20px;
+    border: none;
+    margin-left: 1rem;
+}
+
+.icono_enviar_mensajes{
+    margin-left: 1rem;
+    margin-right: 0.2rem;
+} 
