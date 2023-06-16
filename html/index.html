@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/data/favicon-wpppng.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Sign in/Whatsapp</title>
 </head>
 <body>
@@ -13,7 +15,7 @@
             <h1>Bienvenido</h1>
             <div class="div__inicial">
                 <h3>¿Qué quieres hacer?</h3>
-                <button>Iniciar sesión</button>
+                <button id="btn__iniciarSesion">Iniciar sesión</button>
                 <button>Registrarme</button>
             </div>
             <div class="inicial__secundario">
@@ -24,5 +26,6 @@
         </section>
     </main>
 
+    <script src="../scripts/index.js" type="module"></script>
 </body>
 </html>
