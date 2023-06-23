@@ -4,6 +4,7 @@ import { btnInicio } from "../scripts/modulos/direccionamientoPag.js";
 // import { APPIS } from "./modulos/appi.js";
 
 
+
 // import { prueba } from "./service/verificacion.js";
 // import { } from "../scripts/modulos/verificacion.js";
 // import { Entrar } from "../scripts/modulos/direccionamientoPag.js";
