@@ -6,20 +6,24 @@ export const VerificarIngreso = async(url, formulario,btnEntrar) =>{
         const response = await axios.get(`${url}`);
         const data = response.data;
 
-        // data.forEach((element, i) => {
-        //     if (element.Celular === formulario.numero.value && element.Contraseña === formulario.contraseña.value) {
-        //         pintarHome(btnEntrar) 
-        //         alert("BIENVENIDO ", element.Nombre) 
-        //         return
-        //     }
-        // });
+
         let match = data.find(item => item.Celular === formulario.numero.value && item.Contraseña === formulario.contraseña.value)
             if(match){
-                console.log(`Bienvenido ${match.Nombre}`);
                 pintarHome(btnEntrar) 
+                console.log(`Bienvenido ${match.Nombre}`);
+                Swal.fire(
+                    'Correcto',
+                    'Bienvenido (a) ' + match.Nombre,
+                    'question'
+                  )
             }
             else{
-                console.log('fallo');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Lo siento, algo ha fallado intenta nuevamente',
+                    footer: '<a href="">Regresa al home?</a>'
+                })
             }
           
 

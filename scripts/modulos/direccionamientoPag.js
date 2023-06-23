@@ -5,8 +5,6 @@ import { contenedorHome } from "./elementsDom.js";
 import { VerificarIngreso } from "../service/peticionesHTTP.js";
 import { APPIS } from "./appi.js";
 
-
-
 export const pintarHome = (captura) =>{
     captura.addEventListener("click", (e) => {
         contenedorHome.innerHTML = "";
@@ -170,6 +168,15 @@ export const pintarHome = (captura) =>{
      })
 }
 
+const entrando = (btnEntrar) => {
+    btnEntrar.addEventListener("click", (e) => {
+        e.preventDefault()
+        const formulario = document.getElementById("formulario")
+        
+        VerificarIngreso(APPIS.URL_USUARIOS, formulario, btnEntrar)
+    })
+}
+
 export const btnInicio = () => {
      BotonInicio.addEventListener("click", () => {
         contenedorInicioSesion.innerHTML = "";
@@ -203,21 +210,16 @@ export const btnInicio = () => {
     contenedorBienvenido.classList.add("hidden")
 
     
-        
     const btnEntrar = document.getElementById('btn__entrar');
-
-    btnEntrar.addEventListener("click", (e) => {
-        e.preventDefault()
-        const formulario = document.getElementById("formulario")
-        
-        VerificarIngreso(APPIS.URL_USUARIOS, formulario, btnEntrar)
-    })
+    
+    entrando(btnEntrar)
     //Funcionalidad de verificacion 
     
     
-
-
+    
+    
     //Cargar páginca de home 
+   
     // pintarHome(btnEntrar)
     });
 }   
