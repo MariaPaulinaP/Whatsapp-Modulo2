@@ -19,7 +19,7 @@ body{
     box-sizing: border-box;
     background-image: linear-gradient(#EAEFC4, #9BDF46);
     background-attachment: fixed;
-
+    height: 100vh;
 }
 
 .inicial{
@@ -93,14 +93,15 @@ body{
     --oscuro: #346473;
 }
 
-body{
+/* body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     background-image: linear-gradient(24deg, #EAEFC4, #9BDF46, #EAEFC4);
     background-attachment: fixed;
+    
 
-}
+} */
 
 .btn__atras{
     height:20%;
@@ -198,7 +199,7 @@ input:hover{
 
 .header{
     width: 100%;
-    height: 20%;
+    height: 10%;
     background-color: var(--colorGris);
     display: flex;
 }
@@ -245,17 +246,17 @@ input:hover{
 }
 
 main{
-    height: 80%;
     display: flex;
-    height: 460px;
+    height: 90%;
 }
 
 .espacio_contactos{
     width: 29.4%;
+    height: 90%;
 }
 .contenedor_buscar{
     width: 100%;
-    height: 60px;
+    height: 8%;
     background-color: rgb(243, 243, 243)
 }
 .buscar_contacto{
@@ -278,6 +279,8 @@ main{
     width: 80%;
     margin-left: 1rem;
     font-size: 17px;
+    height: 70%;
+    background-color: rgb(241, 241, 241);
 }
 
 .contenedor_contactos{
@@ -340,11 +343,12 @@ main{
 
 .espacio_mensajes{
     width: 70.6%;
+    height: 90%;
 }
 
 .visualizacion_mensajes{
     margin: 0;
-    height: 487px;
+    height: 90%;
     width: 100%;
     background-image: url(https://i.pinimg.com/originals/d4/63/7b/d4637b476b7b908c9fde1107a83b00fe.jpg);
     display: flex;
@@ -370,6 +374,8 @@ main{
     display: flex;
     align-content: start;
     margin-left: 1rem;
+    align-self: flex-start;
+    
 }
 
 .mensaje_salida{ 
@@ -379,6 +385,7 @@ main{
     max-width: 50%;
     display: flex;
     align-content:end;
+    align-self: flex-end;
     /* position: relative; */
     /* left: 500px;    */
     
@@ -392,7 +399,7 @@ main{
 }
 
 .escribir_mensajes{
-    height: 60px;
+    height: 10%;
     background-color: rgb(243, 243, 243);
     display: flex;
     align-items: center;

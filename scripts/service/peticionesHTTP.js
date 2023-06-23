@@ -21,8 +21,7 @@ export const VerificarIngreso = async(url, formulario,btnEntrar) =>{
             else{
                 console.log('fallo');
             }
-         
-        
+          
 
     }
     catch (error){
