@@ -20,7 +20,10 @@ body{
     background-image: linear-gradient(#EAEFC4, #9BDF46);
     background-attachment: fixed;
     
+    height: 90.7vh;
 }
+
+
 
 .inicial{
     text-align: center;
@@ -93,15 +96,6 @@ body{
     --oscuro: #346473;
 }
 
-/* body{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background-image: linear-gradient(24deg, #EAEFC4, #9BDF46, #EAEFC4);
-    background-attachment: fixed;
-    
-
-} */
 
 .btn__atras{
     height:20%;
@@ -194,7 +188,6 @@ input:hover{
 *{
     box-sizing: border-box;
     margin: 0;
-
 }
 
 .header{
@@ -247,12 +240,12 @@ input:hover{
 
 main{
     display: flex;
-    height: 90%;
+    height: 100%;
 }
 
 .espacio_contactos{
     width: 29.4%;
-    height: 90%;
+    height: 100%;
 }
 .contenedor_buscar{
     width: 100%;
@@ -343,7 +336,7 @@ main{
 
 .espacio_mensajes{
     width: 70.6%;
-    height: 90%;
+    height: 100%;
 }
 
 .visualizacion_mensajes{
@@ -386,6 +379,7 @@ main{
     display: flex;
     align-content:end;
     align-self: flex-end;
+    margin-right: 1rem;
     /* position: relative; */
     /* left: 500px;    */
     
