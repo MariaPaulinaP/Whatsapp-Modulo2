@@ -25,8 +25,6 @@ export const VerificarIngreso = async(url, formulario,btnEntrar) =>{
                     footer: '<a href="">Regresa al home?</a>'
                 })
             }
-          
-
     }
     catch (error){
         console.log(error);
