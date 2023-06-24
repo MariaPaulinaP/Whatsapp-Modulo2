@@ -1,7 +1,8 @@
 import { APPIS } from "../modulos/appi.js";
-import { trayendoContactos } from "./contactos.js";
+import { pintarHome } from "../modulos/direccionamientoPag.js";
 
 
+//Funcion para verificar usuario y contraseña
 export const VerificarIngreso = async(url, formulario) =>{
      
     try{
@@ -35,6 +36,29 @@ export const VerificarIngreso = async(url, formulario) =>{
     }
 }
 
+//Funcion para cargar las tarjetas de los contactos
+export const trayendoContactos = async() => {
+    let nuevosContactos = [];
+    try {
+        const {data} = await axios.get(APPIS.URL_USUARIOS)
+       
+        data.forEach(element => {
+
+            const llamarContactos = {
+                Foto: element.Foto,
+                Nombre: element.Nombre,
+            }
+
+            nuevosContactos.push(llamarContactos)
+            
+    });
+    pintarHome(nuevosContactos);
+    
+    } catch (error) {
+         console.log(error);
+    }
+    
+}
 
 
 
@@ -43,18 +67,3 @@ export const VerificarIngreso = async(url, formulario) =>{
 
 
 
-
-
-
-// for (const [index, element] of data.entries()) {
-//     if (element.Celular === formulario.numero.value) {
-//                 alert("BIENVENIDO ", element.Nombre);
-//                 pintarHome(btnEntrar); 
-//                 break
-
-                
-//             } else {    
-//                 console.log("INCORRECTO", " " + index);
-        
-//             }
-// }

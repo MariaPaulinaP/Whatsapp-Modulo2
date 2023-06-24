@@ -5,55 +5,55 @@ import { contenedorHome } from "./elementsDom.js";
 import { VerificarIngreso } from "../service/peticionesHTTP.js";
 import { APPIS } from "./appi.js";
 
-
+//Funcion que pinta interfaz home y tarjetas contactos
 export const pintarHome = (arrayCargarContactos) =>{
 
-       contenedorHome.classList.add('contenedor__verHome')
+    contenedorHome.classList.add('contenedor__verHome')
 
-       contenedorInicioSesion.classList.add("hidden__inicioSesion");
+    contenedorInicioSesion.classList.add("hidden__inicioSesion");
 
-    //Pintar tarjetas
-        const contenedorTarjetas = document.getElementById('contenedor_contactos');
-    
-        contenedorTarjetas.innerHTML = ``;
-        arrayCargarContactos.forEach(element =>{
-            
-        contenedorTarjetas.innerHTML += `
-        <div class="tarjeta_contacto">
+ //Pintar tarjetas
+     const contenedorTarjetas = document.getElementById('contenedor_contactos');
  
-        <article class="union_foto_contacto">
-            <img class="foto_contacto" src=${element.Foto} alt="contacto1">
-        </article>
+     contenedorTarjetas.innerHTML = ``;
+     arrayCargarContactos.forEach(element =>{
+         
+     contenedorTarjetas.innerHTML += `
+     <div class="tarjeta_contacto">
 
-        <article class="union_mensaje">
-            <article class="nombre_dia_mensaje">
-                <span class="nombre_contacto">${element.Nombre}</span>
-                <span class="dia_mensaje">Viernes</span>
-            </article>
+     <article class="union_foto_contacto">
+         <img class="foto_contacto" src=${element.Foto} alt="contacto1">
+     </article>
 
-            <article class="icono_texto_mensaje">
-                <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
-                <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </article>
-        </article>
-       
-        </div>  
-        `
-    });
+     <article class="union_mensaje">
+         <article class="nombre_dia_mensaje">
+             <span class="nombre_contacto">${element.Nombre}</span>
+             <span class="dia_mensaje">Viernes</span>
+         </article>
 
-  
+         <article class="icono_texto_mensaje">
+             <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
+             <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+         </article>
+     </article>
+    
+     </div>  
+     `
+ });
 }
 
+
+//Funcionalidad con el boton entrar
 const entrando = (btnEntrar) => {
     btnEntrar.addEventListener("click", (e) => {
         e.preventDefault()
         const formulario = document.getElementById("formulario")
         
         VerificarIngreso(APPIS.URL_USUARIOS, formulario)
-
     })
 }
 
+//Funcion cambio de pagina de bienvenido a inicio sesion
 export const btnInicio = () => {
      BotonInicio.addEventListener("click", () => {
         contenedorInicioSesion.innerHTML = "";
@@ -86,14 +86,14 @@ export const btnInicio = () => {
 
     contenedorBienvenido.classList.add("hidden")
 
-    
     const btnEntrar = document.getElementById('btn__entrar');
     
     entrando(btnEntrar)   
-   
     });
-    
 }   
+
+
+
 
 
 
