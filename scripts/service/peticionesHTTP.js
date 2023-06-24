@@ -1,21 +1,25 @@
 import { APPIS } from "../modulos/appi.js";
-import { pintarHome } from "../modulos/direccionamientoPag.js";
+import { trayendoContactos } from "./contactos.js";
 
-export const VerificarIngreso = async(url, formulario,btnEntrar) =>{
+
+export const VerificarIngreso = async(url, formulario) =>{
+     
     try{
         const response = await axios.get(`${url}`);
         const data = response.data;
-
-
+        
         let match = data.find(item => item.Celular === formulario.numero.value && item.Contraseña === formulario.contraseña.value)
-            if(match){
-                pintarHome(btnEntrar) 
+                
+               if(match){
                 console.log(`Bienvenido ${match.Nombre}`);
                 Swal.fire(
                     'Correcto',
                     'Bienvenido (a) ' + match.Nombre,
                     'question'
                   )
+                  
+                  trayendoContactos();
+                
             }
             else{
                 Swal.fire({

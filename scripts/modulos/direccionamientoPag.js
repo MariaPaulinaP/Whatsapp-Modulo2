@@ -5,8 +5,9 @@ import { contenedorHome } from "./elementsDom.js";
 import { VerificarIngreso } from "../service/peticionesHTTP.js";
 import { APPIS } from "./appi.js";
 
-export const pintarHome = (captura) =>{
-    captura.addEventListener("click", (e) => {
+
+export const pintarHome = (arrayCargarContactos) =>{
+    // captura.addEventListener("click", (e) => {
         contenedorHome.innerHTML = "";
         contenedorHome.innerHTML += `<header class="header">
  
@@ -44,68 +45,8 @@ export const pintarHome = (captura) =>{
                 </div>
             </div>
     
-            <div class="contenedor_contactos">
+            <div id="contenedor_contactos">
     
-                <div class="tarjeta_contacto">
- 
-                    <article class="union_foto_contacto">
-                        <img class="foto_contacto" src="https://www.clara.es/medio/2022/02/22/frases-motivadoras-para-transformar-y-mejorar-tu-vida_1bcd141e_900x900.jpg" alt="contacto1">
-                    </article>
- 
-                    <article class="union_mensaje">
-                        <article class="nombre_dia_mensaje">
-                            <span class="nombre_contacto">Angela</span>
-                            <span class="dia_mensaje">Viernes</span>
-                        </article>
-    
-                        <article class="icono_texto_mensaje">
-                            <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
-                            <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </article>
-                    </article>
-                   
-                </div>
- 
-                <div class="tarjeta_contacto">
- 
-                    <article class="union_foto_contacto">
-                        <img class="foto_contacto" src="https://www.clara.es/medio/2022/02/22/frases-motivadoras-para-transformar-y-mejorar-tu-vida_1bcd141e_900x900.jpg" alt="contacto1">
-                    </article>
- 
-                    <article class="union_mensaje">
-                        <article class="nombre_dia_mensaje">
-                            <span class="nombre_contacto">Angela</span>
-                            <span class="dia_mensaje">Viernes</span>
-                        </article>
-    
-                        <article class="icono_texto_mensaje">
-                            <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
-                            <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </article>
-                    </article>
-                   
-                </div>
- 
-                <div class="tarjeta_contacto">
- 
-                    <article class="union_foto_contacto">
-                        <img class="foto_contacto" src="https://www.clara.es/medio/2022/02/22/frases-motivadoras-para-transformar-y-mejorar-tu-vida_1bcd141e_900x900.jpg" alt="contacto1">
-                    </article>
- 
-                    <article class="union_mensaje">
-                        <article class="nombre_dia_mensaje">
-                            <span class="nombre_contacto">Angela</span>
-                            <span class="dia_mensaje">Viernes</span>
-                        </article>
-    
-                        <article class="icono_texto_mensaje">
-                            <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
-                            <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </article>
-                    </article>
-                   
-                </div>
- 
                 <div class="tarjeta_contacto">
  
                     <article class="union_foto_contacto">
@@ -165,7 +106,37 @@ export const pintarHome = (captura) =>{
     </main>
         `
         contenedorInicioSesion.classList.add("hidden__inicioSesion"); 
-     })
+
+        const contenedorTarjetas = document.getElementById('contenedor_contactos');
+    
+        contenedorTarjetas.innerHTML = ``;
+        
+        arrayCargarContactos.forEach(element =>{
+            
+        contenedorTarjetas.innerHTML += `
+        <div class="tarjeta_contacto">
+ 
+        <article class="union_foto_contacto">
+            <img class="foto_contacto" src=${element.Foto} alt="contacto1">
+        </article>
+
+        <article class="union_mensaje">
+            <article class="nombre_dia_mensaje">
+                <span class="nombre_contacto">${element.Nombre}</span>
+                <span class="dia_mensaje">Viernes</span>
+            </article>
+
+            <article class="icono_texto_mensaje">
+                <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
+                <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </article>
+        </article>
+       
+        </div>  
+        `
+    });
+
+    //  })
 }
 
 const entrando = (btnEntrar) => {
@@ -173,7 +144,8 @@ const entrando = (btnEntrar) => {
         e.preventDefault()
         const formulario = document.getElementById("formulario")
         
-        VerificarIngreso(APPIS.URL_USUARIOS, formulario, btnEntrar)
+        VerificarIngreso(APPIS.URL_USUARIOS, formulario)
+
     })
 }
 
@@ -212,16 +184,10 @@ export const btnInicio = () => {
     
     const btnEntrar = document.getElementById('btn__entrar');
     
-    entrando(btnEntrar)
-    //Funcionalidad de verificacion 
-    
-    
-    
-    
-    //Cargar páginca de home 
+    entrando(btnEntrar)   
    
-    // pintarHome(btnEntrar)
     });
+    
 }   
 
 

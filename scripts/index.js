@@ -1,5 +1,6 @@
 //Importacion de variables y funciones
 import { btnInicio } from "../scripts/modulos/direccionamientoPag.js";
+// import {trayendoContactos} from "../scripts/service/contactos.js"
 // import { VerificarIngreso } from "./service/peticionesHTTP.js";
 // import { APPIS } from "./modulos/appi.js";
 
@@ -15,6 +16,9 @@ import { btnInicio } from "../scripts/modulos/direccionamientoPag.js";
 
 
 btnInicio();
+
+
+
 // prueba(); 
 
  
