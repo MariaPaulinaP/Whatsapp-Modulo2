@@ -181,6 +181,14 @@ input:hover{
 
 /* PARTE DEL HOME */
 
+.contenedor__home{
+    display: none;
+}
+
+.contenedor__verHome{
+    display: block;
+}
+
 :root{
     --colorGris: #ededed;
 }
@@ -287,6 +295,11 @@ main{
     display: flex;
     align-items: center;
     border-bottom: 0.5px solid rgb(171, 171, 171);
+    cursor: pointer;
+}
+
+.tarjeta_contacto:hover{
+    background-color: var(--oscuro);
 }
 
 .union_foto_contacto{
