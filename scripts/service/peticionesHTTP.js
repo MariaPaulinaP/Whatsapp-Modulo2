@@ -46,6 +46,8 @@ export const VerificarIngreso = async(url, formulario) =>{
 
 
 
+
+
 // for (const [index, element] of data.entries()) {
 //     if (element.Celular === formulario.numero.value) {
 //                 alert("BIENVENIDO ", element.Nombre);
