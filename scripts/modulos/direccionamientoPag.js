@@ -4,6 +4,7 @@ import { contenedorBienvenido } from "./elementsDom.js";
 import { contenedorHome } from "./elementsDom.js";
 import { VerificarIngreso } from "../service/peticionesHTTP.js";
 import { APPIS } from "./appi.js";
+import { contenedorTarjetas } from "./elementsDom.js";
 
 //Funcion que pinta interfaz home y tarjetas contactos
 export const pintarHome = (arrayCargarContactos) =>{
@@ -13,8 +14,7 @@ export const pintarHome = (arrayCargarContactos) =>{
     contenedorInicioSesion.classList.add("hidden__inicioSesion");
 
  //Pintar tarjetas
-     const contenedorTarjetas = document.getElementById('contenedor_contactos');
- 
+     
      contenedorTarjetas.innerHTML = ``;
      arrayCargarContactos.forEach(element =>{
          
