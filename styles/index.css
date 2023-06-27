@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 /* font-family: 'Varela Round', sans-serif; */
 
@@ -69,6 +70,7 @@ body{
 }    
 .inicial__secundario img{
     width: 30%;
+    /* background-color: rgb(56, 148, 148); */
 }
 .spn__wpp{
     font-size: 2.5rem;
@@ -111,10 +113,13 @@ body{
     color: black;
 }
 
+/* #contenedor__inicioSesion{
+    width: 100%;
+} */
 .inicio{
     text-align: center;
-    width: 50%;
-    margin: 4% 25%;
+    width: 37rem;
+    margin: 4% 64%;
     display: flex;
     flex-direction: column;
 }
@@ -247,8 +252,8 @@ input:hover{
 }
 
 main{
-    display: flex;
     height: 100%;
+    display: flex;
 }
 
 .espacio_contactos{
@@ -424,23 +429,109 @@ main{
     margin-left: 1rem;
     margin-right: 0.2rem;
 } 
+#btn__input{
+    width: 20px;
+    margin: 0;
+    margin-left: 1rem;
+    padding: 0;
+    border: none;
+    background-color: white;
+    cursor: pointer
+}
+#btn__input img{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
 
 /* RESPONSIVE */
 
 @media(max-width:580px){
-    .btn__entrar{
+    /* .btn__entrar{
         width: auto;
     }
     .inicial__secundario img{
         width: 60%;
     }
+    .inicio{
+        width: 0;
+        margin: 4%;
+        margin-left: 30%;
+        display: flex;
+        align-self: center
+    
+    } */
+
+    .inicio{
+        text-align: center;
+        width: 15rem;
+        margin: 4% 25%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+    #formulario{
+        height: 18rem;
+    }
+    .recuadro{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    legend{
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    .titulo-input{
+        font-size: 22px;
+        margin: 10px 0;
+        font-weight: 500;
+        
+    }
+    input{
+        height: 16%;
+        width: 50%;
+        border-radius: 15px;
+        border: none;
+        background-color: var(--gris);
+        font-size: 17px;
+        padding: 0 10px;
+    }
+    input:hover{
+        background-color: var(--oscuro)
+    }
+    .btn__entrar{
+        margin-top: 15px;
+        height:15%;
+        font-size: 90%;
+        border-radius: 15px;
+        border: none;
+        background-color: var(--gris);
+        cursor: pointer;
+        font-weight: 700;
+        width: 20%;
+    }
+    .btn__entrar:hover{
+        background-color: var(--oscuro)
+    }
+    .inicial__secundario{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 65px;
+    }    
+    .inicial__secundario img{
+        width: 30%;
+    }
+    .spn__wpp{
+        font-size: 2.5rem;
+        font-family: 'Varela Round', sans-serif;
+    }
+    
 }
-
-
-
-
-
-
 
 
 
@@ -450,6 +541,7 @@ main{
     main{
         text-align: center;
         margin: 0;
+    
     }
     .inicial button{
         display: flex;
@@ -459,4 +551,14 @@ main{
         align-items: center;
         justify-content: center;
     }
+
+    .inicio{
+        width: 0;
+        margin: 4%;
+        margin-left: 30%;
+        display: flex;
+        align-self: center
+    
+    }
+  
 }
