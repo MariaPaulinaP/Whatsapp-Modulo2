@@ -67,3 +67,20 @@ export const trayendoContactos = async() => {
 
 
 
+
+
+
+
+
+// for (const [index, element] of data.entries()) {
+//     if (element.Celular === formulario.numero.value) {
+//                 alert("BIENVENIDO ", element.Nombre);
+//                 pintarHome(btnEntrar); 
+//                 break
+
+                
+//             } else {    
+//                 console.log("INCORRECTO", " " + index);
+        
+//             }
+// }

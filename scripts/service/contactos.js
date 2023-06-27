@@ -81,56 +81,7 @@ export const capturando = () => {
 }
 
 
-// const usuarios = [
-//     {
-//         nombre: "Sebastian",
-//         genero: "masculino",
-//         edad: 25,
-//         ciudad: "medellin"
-//     },
-//     {
-//         nombre: "juana",
-//         genero: "femenino",
-//         edad: 20,
-//         ciudad: "itagui"
-//     },
-//     {
-//         nombre: "camili",
-//         genero: "masculino",
-//         edad: 30,
-//         ciudad: "medellin"
-//     },
-//     {
-//         nombre: "luisa",
-//         genero: "femenino",
-//         edad: 18,
-//         ciudad: "medellin"
-//     },
-//     {
-//         nombre: "carmen",
-//         genero: "femenino",
-//         edad: 22,
-//         ciudad: "medellin"
-//     },
-//     {
-//         nombre: "diego",
-//         genero: "masculino",
-//         edad: 23,
-//         ciudad: "medellin"
-//     },
-// ]
 
-
-// // buscando un elemento y devuelve lo que mas se asemeje devuelve un array con todos los elementos que se asemejen a la busquedad
-
-// const buscar = (consulta) => {
-//     return usuarios.filter(item => {
-//         return item.nombre.includes(consulta) 
-
-//     })
-// }
-
-// console.log(buscar("Seb"));
 
 
 // mujer https://vivolabs.es/wp-content/uploads/2022/03/perfil-mujer-vivo.png
