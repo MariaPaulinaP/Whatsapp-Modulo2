@@ -66,6 +66,7 @@ export const BuscandoContacto = async (input) => {
 export const capturando = () => {
     contenedorTarjetas.addEventListener("click", (e) => {
         const elemento = e.target.closest(".tarjeta_contacto")
+        
         console.log(elemento);
     })
 }
