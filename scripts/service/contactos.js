@@ -1,10 +1,10 @@
 import { APPIS } from "../modulos/appi.js";
 import { inputContacto } from "../modulos/elementsDom.js";
-import { botonInputContacto } from "../modulos/elementsDom.js";
-import { contenedorTarjetas } from "../modulos/elementsDom.js";
+import { botonInputContacto, contenedorTarjetas, fotoChat, fotoPerfil, datosContacto } from "../modulos/elementsDom.js";
 
 
 
+let contactos = undefined
 
 export const traerContacto = async() => {
     const {data} = await axios.get(APPIS.URL_USUARIOS)
@@ -13,26 +13,26 @@ export const traerContacto = async() => {
 
 export const BuscandoContacto = async (input) => {
     
-    const contactos = await traerContacto()
+     contactos = await traerContacto()
 
     botonInputContacto.addEventListener('click', ()=>{
         let valor = input.value;
-        contactos.filter(element => {
+        contactos.filter((element, index) => {
             
             if ( element.Nombre.includes(valor)) {
                 let encontrado = 
                 contenedorTarjetas.innerHTML += `   
-                <div class="tarjeta_contacto">
+                <div class="tarjeta_contacto" id="tarjeta${index}">
     
                     <article class="union_foto_contacto">
                         <img class="foto_contacto" src=${element.Foto} alt="contacto1">
                     </article>
     
                     <article class="union_mensaje">
-                    <article class="nombre_dia_mensaje">
-                        <span class="nombre_contacto">${element.Nombre}</span>
-                        <span class="dia_mensaje">Viernes</span>
-                    </article>
+                        <article class="nombre_dia_mensaje">
+                            <span class="nombre_contacto">${element.Nombre}</span>
+                            <span class="dia_mensaje">null</span>
+                        </article>
     
                     <article class="icono_texto_mensaje">
                         <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
@@ -42,6 +42,7 @@ export const BuscandoContacto = async (input) => {
         
                  </div>
                 `;
+
                 // convierte en un nodo todo lo que hay en la variable encontrado
                 const rango = document.createRange();
                 const fragmento = rango.createContextualFragment(encontrado);
@@ -65,8 +66,17 @@ export const BuscandoContacto = async (input) => {
 
 export const capturando = () => {
     contenedorTarjetas.addEventListener("click", (e) => {
-        const elemento = e.target.closest(".tarjeta_contacto")
-        console.log(elemento);
+    contactos.forEach((element, index) => {
+            const usuario = document.getElementById('tarjeta' + index)
+            console.log();
+            console.log(usuario);
+        });
+
+        
+        // fotoChat.innerHTML = `
+        // <img class="foto_perfil" src="${usuario.firstChild}" alt="foto perfil">`
+        // datosContacto.innerHTML = `
+        // <span class="nombre_perfil">${usuario.article.textContent}</span>`
     })
 }
 
