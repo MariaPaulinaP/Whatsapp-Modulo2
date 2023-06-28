@@ -1,7 +1,7 @@
 // import { fotoPerfil } from "../modulos/elementsDom.js";
 
 
-import { fotoPerfil, espacioContactos, ContenedorEditarPerfil, hijo1, contenedorTarjetas, hijos, nuevoHijo } from "../modulos/elementsDom.js";
+import { fotoPerfil, espacioContactos, ContenedorEditarPerfil, hijo1, contenedorTarjetas, hijos, nuevoHijo, atras } from "../modulos/elementsDom.js";
 
 // document.addEventListener('click', (e) =>{
 //     if(e.target.classList.contains("foto_perfil"))
@@ -15,7 +15,21 @@ export const agregandoPerfil = () => {
         hijo1.classList.remove("contenedor_buscar")
         contenedorTarjetas.classList.add("ocultas")
         contenedorTarjetas.classList.remove("contenedor_contactos")
-       
+        hijos.classList.remove("perfil")
+        hijos.classList.add("contenedor_perfil")
+    
     });
+
+    atras.addEventListener("click", () => {
+        console.log("el boton atras");
+        hijos.classList.remove("contenedor_perfil")
+        hijos.classList.add("perfil")
+
+        hijo1.classList.add("contenedor_buscar")
+        hijo1.classList.remove("oculta")
+
+        contenedorTarjetas.classList.remove("ocultas")
+        contenedorTarjetas.classList.add("contenedor_contactos")
+    })
 }; 
 
