@@ -30,6 +30,33 @@
         <section id="contenedor__inicioSesion">
         </section>
 
+        
+             <!-- aqui empieza lo de editar perfil -->
+        <section class="perfil">
+            <div class="barra__verde">
+                <img src="../data/arrow-left.svg" alt="" id="atras">
+                <span>perfil</span>
+            </div>
+    
+            <div class="container__perfil">
+                <img src="../data/cualidades-persona-humanitaria.jpg" alt="" class="circulo__foto">
+                <div class="camara" id="camara">
+                    <img src="../data/camera.svg" alt="camara">
+                    <span>Cambiar imagen</span>
+                </div>
+            </div>
+    
+           
+            <div class="blanco">
+                    <h4>tu nombre</h4>
+                    <span>Laura</span>
+                    <img src="../data/edit-2.svg" alt="Editar" id="Editar">
+            </div>
+        </section>
+
+
+        <!-- Home -->
+
         <section class="contenedor__home" >
             <header class="header">
  
@@ -40,15 +67,18 @@
                 </section>
          
                 <section class="perfil_mensaje">
-                    <!-- <figure id="figure__chat">
-                      
-                    <div class="datos_contacto">
-                       
-                        <span class="estado_perfil">EN LINEA</span>
+                    <div class="datos__contacto">
+                        <figure id="figure__chat">
+                            <!-- foto chat -->
+                         </figure>
+                         <!-- nombre -->
+                         
+                         <span class="estado_perfil">EN LINEA</span>
                     </div>
+                    
                     <figure>
                         <img class="icono_buscar" src="../data/Icons/search.svg" alt="icono buscar">
-                    </figure> -->
+                    </figure> 
 
                     
                     <figure>
@@ -60,8 +90,10 @@
             </header>
          
             <main>
-                <section class="espacio_contactos">
+                
+                <section class="espacio_contactos no_show" >
          
+                  <div class="pruebaOcultar">
                     <div class="contenedor_buscar">
                         <div class="buscar_contacto">
                             <figure>
@@ -73,10 +105,11 @@
                         </div>
                     </div>
             
-                    <div id="contenedor_contactos">
+                    <div class="contenedor_contactos">
                         <!-- Cargar tarjetas de los contactos -->
     
                     </div>
+                 </div>
             
                 </section>
          
