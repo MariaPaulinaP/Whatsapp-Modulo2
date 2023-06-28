@@ -20,7 +20,6 @@ export const VerificarIngreso = async(url, formulario) =>{
                   )
                   
                   trayendoContactos();
-                
             }
             else{
                 Swal.fire({
@@ -35,20 +34,18 @@ export const VerificarIngreso = async(url, formulario) =>{
         console.log(error);
     }
 }
-
+export let nuevosContactos = undefined
 //Funcion para cargar las tarjetas de los contactos
-export const trayendoContactos = async() => {
-    let nuevosContactos = [];
+
+export const trayendoContactos = async(data = null) => {
+    nuevosContactos = [];
     try {
         const {data} = await axios.get(APPIS.URL_USUARIOS)
-       
         data.forEach(element => {
-
             const llamarContactos = {
                 Foto: element.Foto,
                 Nombre: element.Nombre,
             }
-
             nuevosContactos.push(llamarContactos)
             
     });

@@ -84,6 +84,14 @@ body{
     display: none;
 }
 
+.fotico__chat{
+    height: 40px;
+    border-radius: 25px;
+    margin-left: 11px
+}
+
+
+
 /* INICIO SESION */
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 /* font-family: 'Varela Round', sans-serif; */
@@ -242,6 +250,10 @@ input:hover{
     margin-right: 80%;
 }
 
+.datos__contacto{
+    display:flex
+}
+
 .nombre_perfil{
     font-weight: bolder;
     font-size: 20px;
@@ -249,6 +261,8 @@ input:hover{
 .estado_perfil{
     font-size: 12px;
     color: grey;
+    position: relative;
+    top: 5px;
 }
 
 main{
@@ -443,6 +457,127 @@ main{
     padding: 0;
     margin: 0;
 }
+
+/* aqui todos los cambios de profile  */
+
+:root{
+    --gris: #EDEDED;
+    --verdeClaro:  #128C7E
+    ;
+    --verdeOscuro: #25A55F;
+    --azulOscuro: #34B7F1;
+    --grisOscuro:  #555555;
+
+}
+
+.perfil{
+    width: 30%;
+    background-color: var(--gris);
+    height: 41rem;
+    text-align: center;
+    margin: 0 40%;
+    border: 1px lightgray solid;
+    display: none;
+}
+.barra__verde{
+    height: 15%;
+    background-color: var(--verdeClaro);
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+.barra__verde img{
+    margin-bottom: 3px;
+    color: var(--gris);
+    cursor: pointer;
+}
+.barra__verde span{
+    margin-bottom: 7px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--gris);
+}
+.circulo__foto{
+    border-radius: 100%;
+    width: 60%;
+    height: 30%;
+    margin: 30px 20px;
+}
+.camara{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 125px;
+    opacity: 1%;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 19px;
+    width: 50%;
+    left: 26%;
+    height: 100px;
+    bottom: 150px;
+}
+.camara:hover {
+   opacity: 100%;
+}
+
+.blanco{
+    width: 100%;
+    background-color: white;
+    height: 15%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 18%;
+}
+.blanco img{
+    order: 1;
+    align-items: end;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.blanco h4{
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: var(--grisOscuro);
+}
+.blanco span{
+    display: flex;
+    align-self: flex-start;
+    align-items: end;
+    margin-left: 10px;
+    position: relative;
+    top: 30px;
+}
+.contenedor__perfil{
+    display: block;
+}
+.ver{
+    display: block;
+}
+.oculta{
+    display: none;
+}
+.ocultas{
+    display: none;
+}
+
+@media(max-width:800px){
+    .perfil{
+        width: 100%;
+        margin: 0;
+    }
+}
+
+
+
 
 /* RESPONSIVE */
 

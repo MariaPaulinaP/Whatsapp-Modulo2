@@ -1,10 +1,7 @@
-import { BotonInicio } from "./elementsDom.js";
-import { contenedorInicioSesion } from "./elementsDom.js";
-import { contenedorBienvenido } from "./elementsDom.js";
-import { contenedorHome } from "./elementsDom.js";
+import { BotonInicio, contenedorTarjetas, contenedorInicioSesion, contenedorBienvenido, contenedorHome } from "./elementsDom.js";
 import { VerificarIngreso } from "../service/peticionesHTTP.js";
 import { APPIS } from "./appi.js";
-import { contenedorTarjetas } from "./elementsDom.js";
+
 
 //Funcion que pinta interfaz home y tarjetas contactos
 export const pintarHome = (arrayCargarContactos) =>{
@@ -48,7 +45,6 @@ const entrando = (btnEntrar) => {
     btnEntrar.addEventListener("click", (e) => {
         e.preventDefault()
         const formulario = document.getElementById("formulario")
-        
         VerificarIngreso(APPIS.URL_USUARIOS, formulario)
     })
 }
@@ -83,11 +79,8 @@ export const btnInicio = () => {
 
         </div>
     </section>`
-
     contenedorBienvenido.classList.add("hidden")
-
     const btnEntrar = document.getElementById('btn__entrar');
-    
     entrando(btnEntrar)   
     });
 }   
