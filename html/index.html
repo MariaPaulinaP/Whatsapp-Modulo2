@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/data/favicon-wpppng.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="luxon.js"></script> -->
+    <title>Sign in/Whatsapp</title>
+</head>
+<body>
+    
+    <main>
+        <section id="contenedor__bienvenido" class="inicial">
+            <h1>Bienvenido</h1>
+            <div class="div__inicial">
+                <h3>¿Qué quieres hacer?</h3>
+                <button id="btn__iniciarSesion">Iniciar sesión</button>
+                <button id="registro">Registrarme</button>
+            </div>
+            <div class="inicial__secundario">
+                <img src="../data/imagenwpp.svg" alt="">
+                <span class="spn__wpp">Whatsapp</span>
+            </div>
+            
+        </section>
+
+        <section id="contenedor__inicioSesion">
+        </section>
+
+        <!-- Home -->
+
+        <section class="contenedor__home" >
+            <header class="header">
+ 
+                <section class="perfil_usuario">
+                    <figure id="figure__perfil">
+                        <img class="foto_perfil" src="https://img.freepik.com/fotos-premium/retrato-hombre-negro-sonrisa-emocionada-estudio-gafas-borde-marco-color-fondo-cara-divertida-modelo-masculino-feliz-nerd-sonriendo-confianza-felicidad-joven-geek-confiado_590464-132269.jpg?w=2000" alt="foto perfil">
+                    </figure>
+                </section>
+         
+                <section class="perfil_mensaje">
+                    <div class="datos__contacto">
+                        <figure id="figure__chat">
+                            <!-- foto chat -->
+                         </figure>
+                         <!-- nombre -->
+                         
+                         <span class="estado_perfil">EN LINEA</span>
+                    </div>
+                    
+                    <figure>
+                        <img class="icono_buscar" src="../data/Icons/search.svg" alt="icono buscar">
+                    </figure>
+                    
+                </section>
+         
+            </header>
+         
+            <main>
+                
+                <section class="espacio_contactos" >
+         
+                       <!-- aqui empieza lo de editar perfil -->
+                    <section class="perfil">
+                        <div class="barra__verde">
+                            <img src="../data/arrow-left.svg" alt="" id="atras">
+                            <span>perfil</span>
+                        </div>
+                
+                        <div class="container__perfil">
+                            <img src="../data/cualidades-persona-humanitaria.jpg" alt="" class="circulo__foto">
+                            <div class="camara" id="camara">
+                                <img src="../data/camera.svg" alt="camara">
+                                <span>Cambiar imagen</span>
+                            </div>
+                        </div>
+                
+                    
+                        <div class="blanco">
+                                <h4>tu nombre</h4>
+                                <span class="nombre__perfil">Laura</span>
+                                <img src="../data/edit-2.svg" alt="Editar" id="Editar">
+                        </div>
+                    </section>  
+
+                    <div class="contenedor_buscar">
+                        <div class="buscar_contacto">
+                            <figure>
+                                <button id="btn__input">
+                                    <img class="icono_buscar_contacto" src="../data/Icons/search.svg" alt="icono buscar">
+                                </button>
+                            </figure>
+                            <input class="input_buscar_contacto" id="input_buscarContacto" type="text" placeholder="Buscar o iniciar nuevo chat" >
+                        </div>
+                    </div>
+            
+                    <div class="contenedor_contactos">
+                        <!-- Cargar tarjetas de los contactos -->
+    
+                    </div>
+            
+                </section>
+         
+                <section class="espacio_mensajes">
+         
+                    <div class="visualizacion_mensajes">
+                        <span class="dia_envio_mensaje">Jueves</span>
+                        <article class="mensaje_entrada">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex repellendus nam velit incidunt</p>
+                        </article>
+                        <article class="mensaje_salida">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        </article>
+                        <span class="dia_envio_mensaje">Viernes</span>
+                        <article class="mensaje_entrada">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex repellendus nam velit incidunt Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolores blanditiis </p>
+                        </article>
+                        <article class="mensaje_salida">
+                            <p>Lorem ipsum dolor sit amet c</p>
+                        </article>
+                    </div>
+         
+                    <div class="escribir_mensajes">
+                        <img class="icono_enviar_mensajes" src="../data/Icons/smile.svg" alt="iconoCara">
+         
+                        <img class="icono_enviar_mensajes" src="../data/Icons/paperclip.svg" alt="iconoClip">
+         
+                        <input type="text" class="input_mensaje" placeholder="Escribe un mensaje">
+         
+                        <img class="icono_enviar_mensajes" src="../data/Icons/mic.svg" alt="">
+                    </div>
+         
+                </section>
+         
+            </main>
+        </section>
+
+    </main>
+
+    <script src="../scripts/index.js" type="module"></script>
+</body>
+</html>
+
+
