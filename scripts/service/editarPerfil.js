@@ -1,7 +1,7 @@
 // import { fotoPerfil } from "../modulos/elementsDom.js";
 
 
-import { fotoPerfil, espacioContactos, ContenedorEditarPerfil, hijo1, contenedorTarjetas, hijos, nuevoHijo, atras } from "../modulos/elementsDom.js";
+import { fotoPerfil, espacioContactos, ContenedorEditarPerfil, hijo1, contenedorTarjetas, hijos, nuevoHijo, atras, nombrePerfil } from "../modulos/elementsDom.js";
 
 // document.addEventListener('click', (e) =>{
 //     if(e.target.classList.contains("foto_perfil"))
@@ -33,3 +33,8 @@ export const agregandoPerfil = () => {
     })
 }; 
 
+// const editarPerfil = async() => {
+// //     atras.addEventListener("click", () => {
+// //     nombrePerfil.
+// //     })
+// }
