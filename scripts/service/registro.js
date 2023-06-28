@@ -2,7 +2,6 @@ import { APPIS } from "../modulos/appi.js";
 
 //Import y crear variable de ceularInput, nombreInput, contraeñaInput, FotoInput
 
-
 const cargarContactos = async(url) => {
     const {data} = await axios.get(url)
     return data

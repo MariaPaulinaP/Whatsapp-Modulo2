@@ -1,4 +1,4 @@
-import { BotonInicio, contenedorTarjetas, contenedorInicioSesion, contenedorBienvenido, contenedorHome } from "./elementsDom.js";
+import { BotonInicio, contenedorTarjetas, contenedorInicioSesion, contenedorBienvenido, contenedorHome, registro, contenedorRegistro} from "./elementsDom.js";
 import { VerificarIngreso } from "../service/peticionesHTTP.js";
 import { APPIS } from "./appi.js";
 
@@ -63,10 +63,10 @@ export const btnInicio = () => {
                 <legend>Inicia Sesión</legend>
             
                 <label for="numero" class="titulo-input">Numero de celular</label>
-                <input type="number" name="numero" id="numero__celular" required>
+                <input class="input_inicioSesion" type="number" name="numero" id="numero__celular" required>
                 
                 <label for="contraseña" class="titulo-input">Contraseña</label>
-                <input type="password" name="contraseña" id="contraseña__celular" required>
+                <input  class="input_inicioSesion" type="password" name="contraseña" id="contraseña__celular" required>
 
                 <button id="btn__entrar" class="btn__entrar">Entrar</button>
                 
@@ -85,6 +85,33 @@ export const btnInicio = () => {
     });
 }   
 
+export const pintarRegistro = () => { 
+    registro.addEventListener("click", () => {
+
+        contenedorBienvenido.classList.add("hidden")
+
+        contenedorRegistro.innerHTML = "";
+        contenedorRegistro.innerHTML += `
+        <form action="" class="formulario__registro">
+    
+                <label class="label__form" for="phone">Celular</label>
+                <input class="input__form" type="number" id="phone" placeholder="Ingresa el celular">
+                
+                <label class="label__form" for="name">Nombre</label>
+                <input class="input__form" type="text" id="name" placeholder="Ingresa el nombre">
+        
+                <label class="label__form" for="password">Contraseña</label>
+                <input class="input__form" type="text" id="password" placeholder="Ingresa la contraseña">
+        
+                <label class="label__form" for="email">Email</label>
+                <input class="input__form" type="text" id="email" placeholder="Ingresa el email">
+                
+                <button class="btn__form" type="submit">Registrar</button>
+            </form>
+        
+        `;
+    })
+ }
 
 
 
