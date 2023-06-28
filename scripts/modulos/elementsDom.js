@@ -17,6 +17,7 @@ export const oculta= document.querySelector('.oculta');
 export const hijo1= document.querySelector('.contenedor_buscar');
 export const hijos = document.querySelector('.perfil');
 export const nuevoHijo = document.querySelector('.secNueva');
+export const atras = document.getElementById("atras")
 
 
 
