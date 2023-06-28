@@ -23,12 +23,25 @@ export const BuscandoContacto = async (input) => {
     }
 }
 
+<<<<<<< HEAD
 export const pintarBusquedad = async () => {
     const dataBuscar = await BuscandoContacto(inputContacto.value)
     contenedorTarjetas.innerHTML = ""
     dataBuscar.forEach(element => {
         contenedorTarjetas.innerHTML += `   
         <div class="tarjeta_contacto" data-id="${element.id}">
+=======
+export const capturando = () => {
+    contenedorTarjetas.addEventListener("click", (e) => {
+        const elemento = e.target.closest(".tarjeta_contacto")
+        
+        console.log(elemento);
+    contactos.forEach((element, index) => {
+            const usuario = document.getElementById('tarjeta' + index)
+            console.log();
+            console.log(usuario);
+        });
+>>>>>>> 2fa5b77240dd0c9b33f9485d5fc50c17925bf7ad
 
             <article class="union_foto_contacto">
                 <img class="foto_contacto" src=${element.Foto} alt="contacto1">
