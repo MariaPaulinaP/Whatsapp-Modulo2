@@ -1,5 +1,6 @@
 import { BotonInicio, contenedorTarjetas, contenedorInicioSesion, contenedorBienvenido, contenedorHome, registro, contenedorRegistro} from "./elementsDom.js";
-import { VerificarIngreso } from "../service/peticionesHTTP.js";
+import { VerificarIngreso} from "../service/peticionesHTTP.js";
+
 import { APPIS } from "./appi.js";
 
 
@@ -89,29 +90,37 @@ export const pintarRegistro = () => {
     registro.addEventListener("click", () => {
 
         contenedorBienvenido.classList.add("hidden")
-
+        contenedorRegistro.classList.add("activa")
+        contenedorRegistro.classList.remove("section__formulario")
         contenedorRegistro.innerHTML = "";
         contenedorRegistro.innerHTML += `
-        <form action="" class="formulario__registro">
+
+        <fieldset class="field">
+
+            <form action="" class="formulario__registro">
+
+            <a href="../html/index.html" class="btn__atras" id="btn__atras" class=""registro__btn>Atrás
+            </a>
     
-                <label class="label__form" for="phone">Celular</label>
-                <input class="input__form" type="number" id="phone" placeholder="Ingresa el celular">
-                
-                <label class="label__form" for="name">Nombre</label>
-                <input class="input__form" type="text" id="name" placeholder="Ingresa el nombre">
-        
-                <label class="label__form" for="password">Contraseña</label>
-                <input class="input__form" type="text" id="password" placeholder="Ingresa la contraseña">
-        
-                <label class="label__form" for="email">Email</label>
-                <input class="input__form" type="text" id="email" placeholder="Ingresa el email">
-                
-                <button class="btn__form" type="submit">Registrar</button>
-            </form>
+            <label class="label__form" for="phone">Celular</label>
+            <input class="input__form" type="number" id="phone" placeholder="Ingresa el celular">
+            
+            <label class="label__form" for="name">Nombre</label>
+            <input class="input__form" type="text" id="name" placeholder="Ingresa el nombre" name="nombre">
+    
+            <label class="label__form" for="password">Contraseña</label>
+            <input class="input__form" type="text" id="password" placeholder="Ingresa la contraseña">
+    
+            <label class="label__form" for="foto">Foto</label>
+            <input class="input__form" type="text" id="foto__registro" placeholder="Ingresa la URL de la foto">
+            
+            <button class="btn__form" type="submit">Registrar</button>
+        </form>
+        </fieldset>
         
         `;
     })
- }
+}
 
 
 

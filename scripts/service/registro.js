@@ -1,19 +1,28 @@
 import { APPIS } from "../modulos/appi.js";
+import { contenedorRegistro } from "../modulos/elementsDom.js";
 
-//Import y crear variable de ceularInput, nombreInput, contraeñaInput, FotoInput
 
 const cargarContactos = async(url) => {
     const {data} = await axios.get(url)
     return data
 }
 
-export const nuevoUsuario = async (event) =>{
-    event.preventDefault(); 
-
+export const nuevoUsuario = async () =>{
+    
     try {
-        const usuariosActuales = await cargarContactos(APPIS.URL_USUARIOS);
+        contenedorRegistro.addEventListener("click", async (e) => {
+            e.preventDefault()
+            const inputNombre = document.getElementById("name").value;
+            const inputCelular = document.getElementById("phone").value;
+            const inputContraseña = document.getElementById("password").value;
+            const inputUrl = document.getElementById("foto__registro").value;
 
-        const nuevoCelular = celularInput.value;
+        
+        const usuariosActuales = await cargarContactos(APPIS.URL_USUARIOS);
+        
+       
+        const nuevoCelular = inputCelular;
+        console.log(nuevoCelular)
 
         const compararCelular = usuariosActuales.find((user)=> user.Celular == nuevoCelular);
         if(compararCelular){
@@ -23,14 +32,17 @@ export const nuevoUsuario = async (event) =>{
         else{
 
             const newUsuario = {
-                Nombre: nombreInput.value,
-                Celular: celularInput.value,
-                Contraseña: contraeñaInput.value, 
-                Foto: FotoInput.value,
+                Nombre: inputNombre, 
+                Celular:  inputCelular, 
+                Contraseña: inputContraseña,
+                Foto:inputUrl,
             }
 
             agregarUsuario(newUsuario); 
         }
+        });
+        
+        
         
     } catch (error) {
         console.log(error);

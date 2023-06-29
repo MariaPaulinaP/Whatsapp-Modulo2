@@ -135,15 +135,14 @@ body{
     height: 20rem;
 }
 
-.section__formulario{
-    wih
-}
+
 .recuadro{
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center
 }
+
 legend{
     font-size: 30px;
     margin-bottom: 30px;
@@ -324,6 +323,8 @@ main{
 .contenedor_contactos{
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    height: 90%;
 }
 
 .tarjeta_contacto{
@@ -610,47 +611,77 @@ main{
 
 
 /* REGISTRO */
-.formulario{
+.formulario__registro{
     width: 50%;
-    height: 420px;
-    margin: 0 25%;
-    margin-top: 20%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10%;
+    padding: 5%;
+    margin: 0 25%; 
+    border-radius: 10%;
 }
+
 .label__form{
-    font-size: 23px;
-    color: white;
+    font-size: 18px;
+    color: black;
     margin-bottom: 10px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    margin-top: 5px; 
 }
 .input__form{
-    height: 21px;
-    width: 70%;
+    height: 35px;
+    width: 100%;
     border-radius: 18px;
     border: none;
-    background-color: antiquewhite;
+    background-color: rgb(237, 236, 236);
+    padding: 5%;
+    margin-bottom: 2%;
 }
+
 .btn__form{
-    width: 30%;
-    height: 70px;
-    background-color: darkgray;
-    color: aliceblue;
+    width: 35%;
+    height: 10%;
+    background-color: rgb(68, 204, 79);
+    color: black;
     border-radius: 8px;
     border: none;
+    margin: 2%; 
+    font-weight: bolder;
 }
+
 .btn__form:hover{
-    width: 35px;
-    height: 80px;
+    width: 35%;
+    height: 11%;
     background-color: cornflowerblue;
+}
+
+.registro__btn{
+    margin-left: 500px; 
 }
 
 
 .activa{
     display: block;
+    width: 100%;
 }
 
-
+.section__formulario{
+    width: 100%;
+    display: none;
+}
+.field{
+    background-color: #c1c1c1;
+    text-align: center;
+    width: 80%;
+    margin: 0 10%;
+    margin-top: 1%;
+    border: none;
+    border-radius: 10px;
+    background-image: linear-gradient( #c1c1c1, #9BDF46);
+}
 
 
 
