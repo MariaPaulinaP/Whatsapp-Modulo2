@@ -4,6 +4,7 @@ import { BuscandoContacto, pintarBusquedad} from "./service/contactos.js";
 import { inputContacto } from "../scripts/modulos/elementsDom.js";
 import { agregandoPerfil, editarPerfil } from "../scripts/service/editarPerfil.js";
 import { nuevoUsuario } from "./service/registro.js";
+import { traerMensajes } from "./service/mensajes.js";
 
 
 // delay para la funcion del buscador
@@ -27,3 +28,4 @@ agregandoPerfil()
 editarPerfil()
 pintarRegistro();
 nuevoUsuario()
+traerMensajes()

@@ -12,11 +12,13 @@ export const VerificarIngreso = async(url, formulario) =>{
                 
                if(match){
                 console.log(`Bienvenido ${match.Nombre}`);
+                console.log(match)
                 Swal.fire(
                     'Correcto',
                     'Bienvenido (a) ' + match.Nombre,
                     'question'
                   )
+                  //Guardar informacion de celular y contraseña en sesionstorage
                   
                   trayendoContactos();
             }
