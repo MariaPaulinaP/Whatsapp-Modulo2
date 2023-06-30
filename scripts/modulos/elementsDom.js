@@ -31,7 +31,8 @@ export const fotoPerfilNueva = document.querySelector('.foto_perfil')
 export const registro = document.getElementById("registro")
 
 
-
+// pagina mensajes
+export const contenedorMensajes = document.querySelector('.espacio_mensajes')
 
 
 

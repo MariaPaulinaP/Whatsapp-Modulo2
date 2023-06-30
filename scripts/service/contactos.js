@@ -57,16 +57,22 @@ export const pintarBusquedad = async () => {
 contenedorTarjetas.addEventListener("click", (e) => {
     const seccion = e.target.closest(".tarjeta_contacto");
     // Acceder a las propiedades del elemento
-    if (seccion) {
-      const nombreContacto = seccion.querySelector(".nombre_contacto").textContent;
-      const fotoContacto = seccion.querySelector(".foto_contacto").getAttribute("src");
-      // Realizar operaciones con las propiedades obtenidas
-      console.log("Nombre:", nombreContacto);
-      console.log("Foto:", fotoContacto);
-      principalContenedor.innerHTML = "";
-      fotoChat.innerHTML = "";
-      principalContenedor.innerHTML += `<img src="${fotoContacto}" class="fotico__chat"></img>`
-      principalContenedor.innerHTML += `<h1>${nombreContacto}</h1>`
+    if (seccion) {        
+        const idContacto = seccion.getAttribute("data-id");
+        const nombreContacto = seccion.querySelector(".nombre_contacto").textContent;
+        const fotoContacto = seccion.querySelector(".foto_contacto").getAttribute("src");
+        // Realizar operaciones con las propiedades obtenidas
+        console.log("Nombre:", nombreContacto);
+        console.log("Foto:", fotoContacto);
+        console.log("id:", idContacto);
+
+        principalContenedor.innerHTML = "";
+        fotoChat.innerHTML = "";
+        principalContenedor.innerHTML += `<img src="${fotoContacto}" class="fotico__chat"></img>`
+        principalContenedor.innerHTML += `<h1>${nombreContacto}</h1>`
+        
+        let identificadorContacto = idContacto;
+            identificadorContacto = sessionStorage.setItem("identificador-contacto", JSON.stringify(identificadorContacto))
     }
   });
 

@@ -390,6 +390,8 @@ main{
     height: 100%;
 }
 
+
+/* contenedor de los chats mensajes */
 .visualizacion_mensajes{
     margin: 0;
     height: 90%;
@@ -398,6 +400,8 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    overflow-y: scroll;
+    
     /* align-items: baseline; */
 }
 

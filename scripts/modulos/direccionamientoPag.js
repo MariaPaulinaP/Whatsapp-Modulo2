@@ -37,7 +37,8 @@ export const pintarHome = (arrayCargarContactos) =>{
     
      </div>  
      `
- });
+     
+    });
 }
 
 
@@ -86,6 +87,7 @@ export const btnInicio = () => {
     });
 }   
 
+// pintar formulario de registro
 export const pintarRegistro = () => { 
     registro.addEventListener("click", () => {
 

@@ -2,25 +2,31 @@ import { APPIS } from "../modulos/appi.js";
 import { pintarHome } from "../modulos/direccionamientoPag.js";
 
 //Funcion para verificar usuario y contraseña
+
+
 export const VerificarIngreso = async(url, formulario) =>{
      
     try{
         const response = await axios.get(`${url}`);
         const data = response.data;
         
+        
         let match = data.find(item => item.Celular === formulario.numero.value && item.Contraseña === formulario.contraseña.value)
-                
-               if(match){
-                console.log(`Bienvenido ${match.Nombre}`);
-                console.log(match)
-                Swal.fire(
-                    'Correcto',
-                    'Bienvenido (a) ' + match.Nombre,
-                    'question'
-                  )
-                  //Guardar informacion de celular y contraseña en sesionstorage
-                  
+        
+        if(match){
+            console.log(`Bienvenido ${match.Nombre}`);
+            Swal.fire(
+                'Correcto',
+                'Bienvenido (a) ' + match.Nombre,
+                'question'
+                )
+                //Guardar informacion de celular y contraseña en sesionstorage
+                 let idUsuario = match.id;
+                idUsuario = sessionStorage.setItem("identificador", JSON.stringify(idUsuario))
+                 let idUsuarioR = JSON.parse(sessionStorage.getItem(idUsuario))
                   trayendoContactos();
+                console.log(idUsuarioR);
+                  
             }
             else{
                 Swal.fire({
@@ -29,6 +35,7 @@ export const VerificarIngreso = async(url, formulario) =>{
                     text: 'Lo siento, algo ha fallado intenta nuevamente',
                     footer: '<a href="">Regresa al home?</a>'
                 })
+
             }
     }
     catch (error){
@@ -36,7 +43,6 @@ export const VerificarIngreso = async(url, formulario) =>{
     }
 }
 export let nuevosContactos = undefined
-
 //Funcion para cargar las tarjetas de los contactos
 export const trayendoContactos = async(data = null) => {
     nuevosContactos = [];
