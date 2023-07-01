@@ -4,7 +4,7 @@ import { BuscandoContacto, pintarBusquedad } from "./service/contactos.js";
 import { inputContacto } from "../scripts/modulos/elementsDom.js";
 import { agregandoPerfil, editarPerfil } from "../scripts/service/editarPerfil.js";
 import { nuevoUsuario } from "./service/registro.js";
-import { traerMensajes, pintandoMensajesEntrada, pintandoMensajesSalida } from "./service/mensajes.js";
+import { traerMensajes, pintandoMensajesEntrada } from "./service/mensajes.js";
 
 
 // delay para la funcion del buscador
@@ -32,6 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
   traerMensajes()
   console.log(JSON.parse(sessionStorage.getItem("identificador")));
   pintandoMensajesEntrada()
-  pintandoMensajesSalida()
 });
 
