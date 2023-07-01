@@ -33,7 +33,12 @@ export const pintandoMensajesEntrada = async () => {
         });
       };
 
+     //id del que inicia sesion y del que le di click para filtrar la convesacion entre esos dos id. Recorrer array de data, si elementidContacto  = id(maria) && elementiduser (alejo) = id(alejo) si se cumple (accedor a la conversacion) y si se traen se pintan y sobra el otro if. 
+     //hacer otro condicional si sendBY = maria es una mansaje salida
+     //si send by = alejo es mensaje entrada 
+     //
 
+  
       
     
       export const pintandoMensajesSalida = async () => {

@@ -48,6 +48,7 @@ const entrando = (btnEntrar) => {
         e.preventDefault()
         const formulario = document.getElementById("formulario")
         VerificarIngreso(APPIS.URL_USUARIOS, formulario)
+        
     })
 }
 

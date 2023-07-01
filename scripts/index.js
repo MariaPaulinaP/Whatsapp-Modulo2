@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nuevoUsuario()
   traerMensajes()
   console.log(JSON.parse(sessionStorage.getItem("identificador")));
+  console.log(JSON.parse(sessionStorage.getItem("identificador-contacto")));
   pintandoMensajesEntrada()
   pintandoMensajesSalida()
 });
