@@ -23,6 +23,7 @@ export const BuscandoContacto = async (input) => {
 
 //Pintar tarjeta de contacto buscado 
 export const pintarBusquedad = async () => {
+    console.log('estoy buscando')
     const dataBuscar = await BuscandoContacto(inputContacto.value)
     contenedorTarjetas.innerHTML = ""
     dataBuscar.forEach(element => {
@@ -53,26 +54,35 @@ export const pintarBusquedad = async () => {
  
 }
 
-//Pintar nombre, foto y en linea en header de visualizacion mensajes
-contenedorTarjetas.addEventListener("click", (e) => {
-    const seccion = e.target.closest(".tarjeta_contacto");
-    // Acceder a las propiedades del elemento
-    if (seccion) {        
-        const idContacto = seccion.getAttribute("data-id");
-        const nombreContacto = seccion.querySelector(".nombre_contacto").textContent;
-        const fotoContacto = seccion.querySelector(".foto_contacto").getAttribute("src");
-        // Realizar operaciones con las propiedades obtenidas
-        console.log("Nombre:", nombreContacto);
-        console.log("Foto:", fotoContacto);
-        console.log("id:", idContacto);
 
-        principalContenedor.innerHTML = "";
-        fotoChat.innerHTML = "";
-        principalContenedor.innerHTML += `<img src="${fotoContacto}" class="fotico__chat"></img>`
-        principalContenedor.innerHTML += `<h1>${nombreContacto}</h1>`
-        
-        let identificadorContacto = idContacto;
-            identificadorContacto = sessionStorage.setItem("identificador-contacto", JSON.stringify(identificadorContacto))
-    }
-  });
+//Pintar nombre, foto y en linea en header de visualizacion mensajes
+export const clickTarjetas = ()=>{
+    contenedorTarjetas.addEventListener("click", (e) => {
+        const seccion = e.target.closest(".tarjeta_contacto");
+        // Acceder a las propiedades del elemento
+        if (seccion) {        
+            const idContacto = seccion.getAttribute("data-id");
+            const nombreContacto = seccion.querySelector(".nombre_contacto").textContent;
+            const fotoContacto = seccion.querySelector(".foto_contacto").getAttribute("src");
+            // Realizar operaciones con las propiedades obtenidas
+            console.log("Nombre:", nombreContacto);
+            console.log("Foto:", fotoContacto);
+            console.log("id:", idContacto);
+    
+            principalContenedor.innerHTML = "";
+            fotoChat.innerHTML = "";
+            principalContenedor.innerHTML += `<img src="${fotoContacto}" class="fotico__chat"></img>`
+            principalContenedor.innerHTML += `<h1>${nombreContacto}</h1>`
+            
+            console.log(typeof(idContacto));
+            let identificadorContacto = idContacto;
+                identificadorContacto = sessionStorage.setItem("identificador-contacto",(identificadorContacto))
+        }
+      });
+
+} 
+
+
+
+
 

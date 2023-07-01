@@ -21,11 +21,11 @@ export const VerificarIngreso = async(url, formulario) =>{
                 'question'
                 )
                 //Guardar informacion de celular y contraseña en sesionstorage
-                 let idUsuario = match.id;
-                idUsuario = sessionStorage.setItem("identificador", JSON.stringify(idUsuario))
+                 let idUsuario = Number(match.id);
+                idUsuario = sessionStorage.setItem("identificador",(idUsuario))
                  let idUsuarioR = JSON.parse(sessionStorage.getItem("identificador"))
                   trayendoContactos();
-                console.log(idUsuarioR);
+                
                   
             }
             else{
@@ -52,6 +52,7 @@ export const trayendoContactos = async(data = null) => {
             const llamarContactos = {
                 Foto: element.Foto,
                 Nombre: element.Nombre,
+                Id: element.id,
             }
             nuevosContactos.push(llamarContactos)
             

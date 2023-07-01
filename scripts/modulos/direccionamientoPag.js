@@ -17,7 +17,7 @@ export const pintarHome = (arrayCargarContactos) =>{
      arrayCargarContactos.forEach(element =>{
          
      contenedorTarjetas.innerHTML += `
-     <div class="tarjeta_contacto">
+     <div class="tarjeta_contacto" data-id="${element.Id}">
 
      <article class="union_foto_contacto">
          <img class="foto_contacto" src=${element.Foto} alt="contacto1">
