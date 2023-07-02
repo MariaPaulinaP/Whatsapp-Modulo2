@@ -25,8 +25,9 @@ export const BuscandoContacto = async (input) => {
 
 //Pintar tarjeta de contacto buscado 
 export const pintarBusquedad = async () => {
-    console.log('estoy buscando')
+    
     const dataBuscar = await BuscandoContacto(inputContacto.value)
+   
     contenedorTarjetas.innerHTML = ""
     dataBuscar.forEach(element => {
         contenedorTarjetas.innerHTML += `   

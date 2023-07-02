@@ -1,6 +1,5 @@
-import { BotonInicio, contenedorTarjetas, contenedorInicioSesion, contenedorBienvenido, contenedorHome, registro, contenedorRegistro} from "./elementsDom.js";
+import { BotonInicio, contenedorTarjetas, contenedorInicioSesion, contenedorBienvenido, contenedorHome, registro, contenedorRegistro, fotoIdPrincipal} from "./elementsDom.js";
 import { VerificarIngreso} from "../service/peticionesHTTP.js";
-
 import { APPIS } from "./appi.js";
 
 
@@ -37,8 +36,12 @@ export const pintarHome = (arrayCargarContactos) =>{
     
      </div>  
      `
-     
+    //  fotoIdPrincipal.innerHTML = `
+    //  <img class="foto_perfil2" src="${element.Foto}" alt="foto perfil">
+    // `
     });
+    
+    
 }
 
 

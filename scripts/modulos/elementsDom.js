@@ -7,6 +7,7 @@ export const contenedorInicioSesion = document.getElementById('contenedor__inici
 export const contenedorBienvenido = document.getElementById('contenedor__bienvenido');
 export const contenedorHome = document.querySelector('.contenedor__home');
 export const contenedorRegistro = document.querySelector('.section__formulario');
+export const fotoIdPrincipal = document.querySelector('#figure__perfil');
 
 //Elementos Dom de pagina index
 export const inputContacto = document.getElementById('input_buscarContacto')
@@ -43,6 +44,12 @@ export const inputMensaje = document.querySelector('.input_mensaje')
 export const buscarMensaje = document.querySelector('.section__buscar')
 export const iconoBuscar = document.querySelector('.icono_buscar')
 export const equis = document.querySelector('.quitar')
+export const inputBuscarMensaje = document.querySelector('.input__buscarMensaje')
+export const contenedorBuscarPrincipal = document.querySelector('.buscar__principal')
+export const cerrarMensajes = document.querySelector('.cerrar__mensaje')
+
+
+
 
 
 // export const botonInputContacto = document.getElementById('btn__input');

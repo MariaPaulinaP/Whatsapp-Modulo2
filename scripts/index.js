@@ -5,7 +5,7 @@ import { inputContacto } from "../scripts/modulos/elementsDom.js";
 import { agregandoPerfil, editarPerfil } from "../scripts/service/editarPerfil.js";
 import { nuevoUsuario } from "./service/registro.js";
 import { traerMensajes, pintandoMensajesEntrada, valorMensaje} from "./service/mensajes.js";
-import { buscadorMensajes} from "./service/buscarMensaje.js";
+import { buscadorMensajes, mostrarMensaje, pintarMensaje } from "./service/buscarMensaje.js";
 
 
 // delay para la funcion del buscador
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnInicio();
   clickTarjetas(); 
   BuscandoContacto(inputContacto);
-  // inputContacto.addEventListener('keyup', debounce(pintarBusquedad, 500))
+  inputContacto.addEventListener('keyup', debounce(pintarBusquedad, 500))
   agregandoPerfil()
   editarPerfil()
   pintarRegistro();
@@ -35,6 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
   pintandoMensajesEntrada()
   buscadorMensajes()
   valorMensaje()
+
+  buscadorMensajes();
+  mostrarMensaje();
+  pintarMensaje()
 });
 
 

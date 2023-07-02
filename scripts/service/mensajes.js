@@ -72,25 +72,25 @@ export const valorMensaje = () => {
 
 }
 
-const enviarMensaje = async (mensaje) => {
-  const idPrincipal = JSON.parse(localStorage.getItem("identificador"));
+// const enviarMensaje = async (mensaje) => {
+//   const idPrincipal = JSON.parse(localStorage.getItem("identificador"));
 
 
-  const body = {
-    sendBy: idPrincipal,
-    date: "20 junio",
-    hour: "3:00",
-    message: mensaje,
-    flag: "null"
-  };
+//   const body = {
+//     sendBy: idPrincipal,
+//     date: "20 junio",
+//     hour: "3:00",
+//     message: mensaje,
+//     flag: "null"
+//   };
 
-  try {
-    const response = await axios.post(APPIS.URL_USUARIOS, body);
-    console.log('Mensaje enviado:', response.data);
-  } catch (error) {
-    console.error('Error al enviar el mensaje:', error);
-  }
-};
+//   try {
+//     const response = await axios.post(APPIS.URL_MENSAJES, body);
+//     console.log('Mensaje enviado:', response.data);
+//   } catch (error) {
+//     console.error('Error al enviar el mensaje:', error);
+//   }
+// };
 
 // addEventListener('keypress', function(event) {
 //   if (event.key === 'Enter') {

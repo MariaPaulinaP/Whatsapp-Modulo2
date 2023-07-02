@@ -24,6 +24,8 @@ export const VerificarIngreso = async(url, formulario) =>{
                  let idUsuario = Number(match.id);
                 idUsuario = localStorage.setItem("identificador",(idUsuario))
                  let idUsuarioR = JSON.parse(localStorage.getItem("identificador"))
+
+
                   trayendoContactos();
                 
                   
