@@ -310,6 +310,7 @@ main{
 }
 .icono_buscar_contacto{
     margin-left: 1rem;
+    cursor: pointer;
 }
 .input_buscar_contacto{
     border: none;
@@ -388,6 +389,14 @@ main{
 .espacio_mensajes{
     width: 70.6%;
     height: 100%;
+    /* overflow-y: scroll; */
+   
+}
+
+.span__hora{
+    font-size: 10px;
+    font-weight: 100;
+    color: #8b8a8a;
 }
 
 
@@ -400,7 +409,8 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    overflow-y: scroll;
+
+    
     
     /* align-items: baseline; */
 }
@@ -420,6 +430,7 @@ main{
     background-color: rgb(253, 248, 248);
     max-width: 50%;
     display: flex;
+    flex-direction: column;
     align-content: start;
     margin-left: 1rem;
     align-self: flex-start;
@@ -435,6 +446,7 @@ main{
     align-content:end;
     align-self: flex-end;
     margin-right: 1rem;
+    flex-direction: column;
     /* position: relative; */
     /* left: 500px;    */
     
@@ -686,9 +698,105 @@ main{
     border-radius: 10px;
     background-image: linear-gradient( #c1c1c1, #9BDF46);
 }
+/* aqui empieza loo de buscar mensaje */
+.icono_buscar{
+    cursor: pointer;
+}
+.quitar{
+    cursor: pointer;
+}
 
+.verBuscar{
+    display: block;
+    width: 35%;
+    background-color: var(--gris);
+    height: 41rem;
+    text-align: center;
+    border: 1px lightgray solid;
+    margin-left: 65%;
+    position: absolute;
+}
 
+.section__buscar{
+    width: 35%;
+    background-color: var(--gris);
+    height: 41rem;
+    text-align: center;
+    border: 1px lightgray solid;
+    display: none;
+}
+.barra__mensajes{
+    width: 100%;
+    height: 10%;
+    background-color: var(--gris);
+    margin-bottom: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.nombre__chat{
+    font-size: 18px;
+}
+.section__buscar img{
+    cursor: pointer;
+}
+.buscar__mensajes{
+    display: flex;
+    width: 98%;
+    height: 6%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    text-align-last: center;
+}
+.buscar__mensajes input{
+    border: none;
+    margin-bottom: 10px;
+}
+.buscar__principal{
+    display: flex;
+    flex-direction:column ;
+    background-color: #ffffff;
+    width: 100%;
+    border: 1px solid var(--grisOscuro) ;
+    border: none;
+    height: auto;
+}
+.fecha{
+    font-size: 15px;
+    color: var(--grisOscuro);
+    text-align: start;
+    font-weight: bold;
+    margin: 15px 15px;
+}
+.mensajes{
+    margin-bottom: 20px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.mensajes span{
+    height: 100%;
+}
+input{
+    width: 50%;
+    border: none;
+    cursor: pointer;
+    height: 50%;
+}
 
+@media(max-width: 500px){
+    .section__buscar{
+        width: 100%;
+    }
+}
 
 @media(max-width:800px){
     .perfil{

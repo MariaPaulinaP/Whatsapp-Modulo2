@@ -22,8 +22,8 @@ export const VerificarIngreso = async(url, formulario) =>{
                 )
                 //Guardar informacion de celular y contraseña en sesionstorage
                  let idUsuario = Number(match.id);
-                idUsuario = sessionStorage.setItem("identificador",(idUsuario))
-                 let idUsuarioR = JSON.parse(sessionStorage.getItem("identificador"))
+                idUsuario = localStorage.setItem("identificador",(idUsuario))
+                 let idUsuarioR = JSON.parse(localStorage.getItem("identificador"))
                   trayendoContactos();
                 
                   

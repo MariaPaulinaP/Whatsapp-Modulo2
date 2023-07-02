@@ -4,7 +4,8 @@ import { BuscandoContacto, pintarBusquedad, clickTarjetas } from "./service/cont
 import { inputContacto } from "../scripts/modulos/elementsDom.js";
 import { agregandoPerfil, editarPerfil } from "../scripts/service/editarPerfil.js";
 import { nuevoUsuario } from "./service/registro.js";
-import { traerMensajes, pintandoMensajesEntrada } from "./service/mensajes.js";
+import { traerMensajes, pintandoMensajesEntrada, valorMensaje} from "./service/mensajes.js";
+import { buscadorMensajes} from "./service/buscarMensaje.js";
 
 
 // delay para la funcion del buscador
@@ -31,8 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
   pintarRegistro();
   nuevoUsuario()
   traerMensajes()
-  console.log(typeof(JSON.parse(sessionStorage.getItem("identificador"))));
-  console.log(JSON.parse(sessionStorage.getItem("identificador-contacto")));
   pintandoMensajesEntrada()
+  buscadorMensajes()
+  valorMensaje()
 });
 
+
+
+
+
+
+ // console.log(JSON.parse(localStorage.getItem("identificador")));
+  // console.log(JSON.parse(localStorage.getItem("identificador-contacto")));

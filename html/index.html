@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="../styles/index.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- <script src="luxon.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
+
     <title>Sign in/Whatsapp</title>
 </head>
 <body>
@@ -39,6 +40,37 @@
         <!-- Home -->
 
         <section class="contenedor__home" >
+
+
+            <!-- aqui va el buscador de mensajes -->
+            <section class="section__buscar">
+                <div class="barra__mensajes">
+                    <img src="/data/x.svg" class="quitar">
+                    <span class="nombre__chat">Mensajes con laura</span>
+                </div>
+        
+                <div class="buscar__mensajes">
+                    <img src="/data/search.svg" alt="">
+                    <input type="text" placeholder="Buscar mensaje">
+                    <img src="/data/x.svg" alt="">
+                </div>
+        
+                <div class="buscar__principal">
+                    <span class="fecha">fecha</span>
+                    <div class="mensajes">
+                        <img src="/data/check.svg" alt="">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, porro?</span>
+                    </div>
+        
+                    <span class="fecha">fecha</span>
+                    <div class="mensajes">
+                        <img src="/data/check.svg" alt="">
+                        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, sint.</span>
+                    </div>
+                </div>
+            </section>
+<!-- ------------------------------------------------------------------------------- -->
+
             <header class="header">
  
                 <section class="perfil_usuario">
@@ -105,27 +137,33 @@
             
                     <div class="contenedor_contactos">
                         <!-- Cargar tarjetas de los contactos -->
-    
-                    </div>
+                        
+
             
                 </section>
          
                 <section class="espacio_mensajes">
 
+                    <div class="visualizacion_mensajes">
+                            
+
+                            
+                    </div>
+                    
+                    
                     <!-- Aqui va los mensajes -->
 
-                    
-         
-                    <!-- <div class="escribir_mensajes">
+                
+                    <div class="escribir_mensajes">
                         <img class="icono_enviar_mensajes" src="../data/Icons/smile.svg" alt="iconoCara">
          
                         <img class="icono_enviar_mensajes" src="../data/Icons/paperclip.svg" alt="iconoClip">
          
-                        <input type="text" class="input_mensaje" placeholder="Escribe un mensaje">
+                        <input type="text" class="input_mensaje" placeholder="Escribe un mensaje y presione enter para enviar">
          
                         <img class="icono_enviar_mensajes" src="../data/Icons/mic.svg" alt="">
-                    </div>
-          -->
+                    </div> 
+          
                 </section>
          
             </main>

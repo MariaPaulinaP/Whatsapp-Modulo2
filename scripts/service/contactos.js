@@ -1,6 +1,8 @@
 import { APPIS } from "../modulos/appi.js";
 import { contenedorTarjetas, fotoChat, principalContenedor, inputContacto } 
 from "../modulos/elementsDom.js";
+import { pintandoMensajesEntrada } from "../service/mensajes.js";
+import { diaSemana, hora, ultimoTiempo, fecha } from "../modulos/luxon.js";
 
 
 export let contactos = undefined
@@ -74,10 +76,10 @@ export const clickTarjetas = ()=>{
             principalContenedor.innerHTML += `<img src="${fotoContacto}" class="fotico__chat"></img>`
             principalContenedor.innerHTML += `<h1>${nombreContacto}</h1>`
             
-            console.log(typeof(idContacto));
             let identificadorContacto = idContacto;
-                identificadorContacto = sessionStorage.setItem("identificador-contacto",(identificadorContacto))
+                identificadorContacto = localStorage.setItem("identificador-contacto",(identificadorContacto))
         }
+        pintandoMensajesEntrada()
       });
 
 } 
