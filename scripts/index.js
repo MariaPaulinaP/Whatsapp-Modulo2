@@ -39,6 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
   buscadorMensajes();
   mostrarMensaje();
   pintarMensaje()
+  
+  
+  // traerFotos();
+  // cambiarFoto(); 
 });
 
 

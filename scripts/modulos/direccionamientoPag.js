@@ -13,7 +13,8 @@ export const pintarHome = (arrayCargarContactos) =>{
  //Pintar tarjetas
      
      contenedorTarjetas.innerHTML = ``;
-     arrayCargarContactos.forEach(element =>{
+     arrayCargarContactos.forEach((element, index) =>{
+        
          
      contenedorTarjetas.innerHTML += `
      <div class="tarjeta_contacto" data-id="${element.Id}">
@@ -36,12 +37,14 @@ export const pintarHome = (arrayCargarContactos) =>{
     
      </div>  
      `
-    //  fotoIdPrincipal.innerHTML = `
-    //  <img class="foto_perfil2" src="${element.Foto}" alt="foto perfil">
-    // `
+      const idPrincipal = JSON.parse(localStorage.getItem("identificador"));
+      let indicador = idPrincipal - 1
+      if (index == indicador){
+           fotoIdPrincipal.innerHTML = `
+           <img class="foto_perfil" src="${element.Foto}" alt="foto perfil">
+           `
+     }
     });
-    
-    
 }
 
 

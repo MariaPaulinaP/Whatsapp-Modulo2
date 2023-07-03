@@ -17,7 +17,7 @@ export const fotoChat = document.getElementById('figure__chat');
 export const principalContenedor = document.querySelector('.datos__contacto');
 
 //Elementos Dom de pagina editarPerfil 
-export const fotoPerfil = document.querySelector('.foto_perfil');
+export const fotoPerfil = document.querySelector('.editar__header');
 export const buscador= document.querySelector('.contenedor_buscar');
 export const perfil = document.querySelector('.perfil');
 export const atras = document.getElementById("atras");
@@ -25,7 +25,9 @@ export const nombrePerfil = document.querySelector('.nombre__perfil');
 export const BotonEditar = document.getElementById('Editar')
 export const camara = document.getElementById('camara')
 export const fotoAcambiar = document.querySelector('.circulo__foto')
-export const fotoPerfilNueva = document.querySelector('.foto_perfil')
+export const fotoPerfilNueva = document.querySelector('.editar__header')
+export const editarFotoPerfil = document.querySelector('.foto_perfil');
+
 
 
 //Elementos Dom de pagina registro

@@ -225,6 +225,7 @@ input:hover{
 .perfil_usuario{
     width: 30%;
     border-right: 1px solid grey;
+    display: flex;
 }
 
 .foto_perfil{
@@ -711,7 +712,7 @@ main{
     display: block;
     width: 35%;
     background-color: var(--gris);
-    height: 41rem;
+    height: 100%;
     text-align: center;
     border: 1px lightgray solid;
     margin-left: 65%;
@@ -791,6 +792,16 @@ input{
     border: none;
     cursor: pointer;
     height: 50%;
+}
+
+
+
+.editar__header{
+    width: 15%;
+    height: 20%;
+    color: var(--gris);
+    background-color: var(--grisOscuro);
+    border: none;
 }
 
 @media(max-width: 500px){
