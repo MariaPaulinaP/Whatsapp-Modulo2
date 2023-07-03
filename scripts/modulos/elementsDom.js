@@ -15,6 +15,9 @@ export const inputContacto = document.getElementById('input_buscarContacto')
 //Elementos Dom de pagina contactos
 export const fotoChat = document.getElementById('figure__chat');
 export const principalContenedor = document.querySelector('.datos__contacto');
+export const estadoWpp = document.querySelector('.estado__wpp');
+
+
 
 //Elementos Dom de pagina editarPerfil 
 export const fotoPerfil = document.querySelector('.editar__header');

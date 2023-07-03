@@ -22,9 +22,8 @@ export const nuevoUsuario = async () =>{
         
        
         const nuevoCelular = inputCelular;
-        console.log(nuevoCelular)
 
-        const compararCelular = usuariosActuales.find((user)=> user.Celular == nuevoCelular);
+        const compararCelular = usuariosActuales.find((user)=> user.Celular === nuevoCelular);
         if(compararCelular){
             console.log('Usuario ya registrado')
             return

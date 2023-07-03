@@ -1,6 +1,7 @@
 import { BotonInicio, contenedorTarjetas, contenedorInicioSesion, contenedorBienvenido, contenedorHome, registro, contenedorRegistro, fotoIdPrincipal} from "./elementsDom.js";
 import { VerificarIngreso} from "../service/peticionesHTTP.js";
 import { APPIS } from "./appi.js";
+import { informacion } from "../service/contactos.js";
 
 
 //Funcion que pinta interfaz home y tarjetas contactos
@@ -45,6 +46,8 @@ export const pintarHome = (arrayCargarContactos) =>{
            `
      }
     });
+    informacion()
+
 }
 
 
