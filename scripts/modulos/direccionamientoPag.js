@@ -3,7 +3,13 @@ import { VerificarIngreso} from "../service/peticionesHTTP.js";
 import { APPIS } from "./appi.js";
 import { nuevoUsuario } from "../service/registro.js";
 import { informacion } from "../service/contactos.js";
-
+import {
+    ahora,
+    fecha,
+    diaSemana,
+    hora,
+    ultimoTiempo,
+  } from "../modulos/luxon.js";
 
 //Funcion que pinta interfaz home y tarjetas contactos
 export const pintarHome = (arrayCargarContactos) =>{
@@ -28,7 +34,7 @@ export const pintarHome = (arrayCargarContactos) =>{
      <article class="union_mensaje">
          <article class="nombre_dia_mensaje">
              <span class="nombre_contacto">${element.Nombre}</span>
-             <span class="dia_mensaje">Viernes</span>
+             <span class="dia_mensaje">${diaSemana}</span>
          </article>
 
          <article class="icono_texto_mensaje">
