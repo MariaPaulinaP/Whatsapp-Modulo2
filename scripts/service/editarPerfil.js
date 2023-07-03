@@ -74,13 +74,21 @@ export const cambiarFoto = async(src) =>{
   let arrayFotos = await traerFotos()
   arrayFotos.forEach(item  => {
     
-    if(item.id == indicador){
+    if(item.id == indicador){ 
+      let Nombre = item.Nombre;
+      let Celular = item.Celular;
+      let Contraseña = item.Contraseña;
+      let Estado = item.Estado;
+      let Información = item.Informción;
+      let Fecha_hora = item.Fecha_hora;
       
-    axios.put('APPIS.URL_USUARIOS')
+      
+    axios.put(`${APPIS.URL_USUARIOS}/${indicador}`, { Foto: src, Nombre: Nombre, Celular: Celular, Contraseña: Contraseña, Estado: Estado, Informción: Información, Fecha_hora: Fecha_hora })
     .then(response => {
-      item.Foto = src;
+      // item.Foto = src;
       
       console.log('si da')
+      location.reload()
     })
     .catch(error=>{
       console.log('error')
