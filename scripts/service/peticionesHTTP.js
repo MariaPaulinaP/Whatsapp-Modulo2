@@ -15,7 +15,7 @@ export const VerificarIngreso = async(url, formulario) =>{
         
         if(match){
             console.log(`Bienvenido ${match.Nombre}`);
-            Swal.fire(
+                Swal.fire(
                 'Correcto',
                 'Bienvenido (a) ' + match.Nombre,
                 'question'
@@ -25,17 +25,16 @@ export const VerificarIngreso = async(url, formulario) =>{
                 idUsuario = localStorage.setItem("identificador",(idUsuario))
                  let idUsuarioR = JSON.parse(localStorage.getItem("identificador"))
 
-
-                  trayendoContactos();
+            trayendoContactos();
                 
                   
             }
             else{
                 Swal.fire({
                     icon: 'error',
-                    title: 'Oops...',
+                    title: 'Ops...',
                     text: 'Lo siento, algo ha fallado intenta nuevamente',
-                    footer: '<a href="">Regresa al home?</a>'
+                    footer: '<a href="">Regresa al home</a>'
                 })
 
             }

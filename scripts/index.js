@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   agregandoPerfil()
   editarPerfil()
   pintarRegistro();
-  nuevoUsuario()
+  // nuevoUsuario()
   traerMensajes()
   pintandoMensajesEntrada()
   buscadorMensajes()

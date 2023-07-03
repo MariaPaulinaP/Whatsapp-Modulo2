@@ -1,5 +1,5 @@
 import { APPIS } from "../modulos/appi.js";
-import { contenedorRegistro } from "../modulos/elementsDom.js";
+// import { contenedorRegistro, registroBoton } from "../modulos/elementsDom.js";
 
 
 const cargarContactos = async(url) => {
@@ -7,10 +7,10 @@ const cargarContactos = async(url) => {
     return data
 }
 
-export const nuevoUsuario = async () =>{
+export const nuevoUsuario = async (boton) =>{
     
     try {
-        contenedorRegistro.addEventListener("click", async (e) => {
+        boton.addEventListener("click", async (e) => {
             e.preventDefault()
             const inputNombre = document.getElementById("name").value;
             const inputCelular = document.getElementById("phone").value;
@@ -24,9 +24,21 @@ export const nuevoUsuario = async () =>{
         const nuevoCelular = inputCelular;
         console.log(nuevoCelular)
 
-        const compararCelular = usuariosActuales.find((user)=> user.Celular == nuevoCelular);
+        if(inputNombre == "" || inputCelular =="" || inputContraseña == "" || inputUrl ==""){
+            Swal.fire({
+                icon: 'info',
+                title: 'Campo faltante',
+            })
+        }
+        else{
+            const compararCelular = usuariosActuales.find((user)=> user.Celular == nuevoCelular);
+        
         if(compararCelular){
-            console.log('Usuario ya registrado')
+            Swal.fire({
+                icon: 'info',
+                title: 'Usuario ya registrado',
+                footer: '<a href="">Regresa a la página de inicio</a>'
+            })
             return
         }
         else{
@@ -40,13 +52,12 @@ export const nuevoUsuario = async () =>{
 
             agregarUsuario(newUsuario); 
         }
-        });
-        
-        
+        }
+
+     });
         
     } catch (error) {
         console.log(error);
-        
     }
 }
 
@@ -59,9 +70,19 @@ const agregarUsuario = (newUsuario) =>{
           },
     })
     .then((response)=> {
+        Swal.fire({
+            icon: 'success',
+            title: 'Usuario registrado exitosamente',
+            footer: '<a href="">Regresa a la página de inicio</a>'
+        })
         console.log('Usuario agregado', response.data)
     })
     .catch((error) => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Usuario no registrado',
+            footer: '<a href="">Regresa a la página de inicio</a>'
+        })
         console.log('Usuario no agregado exitosamente', error)
 
     })

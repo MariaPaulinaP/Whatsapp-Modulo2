@@ -1,7 +1,7 @@
 import { BotonInicio, contenedorTarjetas, contenedorInicioSesion, contenedorBienvenido, contenedorHome, registro, contenedorRegistro, fotoIdPrincipal} from "./elementsDom.js";
 import { VerificarIngreso} from "../service/peticionesHTTP.js";
 import { APPIS } from "./appi.js";
-
+import { nuevoUsuario } from "../service/registro.js";
 
 //Funcion que pinta interfaz home y tarjetas contactos
 export const pintarHome = (arrayCargarContactos) =>{
@@ -108,27 +108,31 @@ export const pintarRegistro = () => {
 
             <form action="" class="formulario__registro">
 
-            <a href="../html/index.html" class="btn__atras" id="btn__atras" class=""registro__btn>Atrás
+            <a href="../html/index.html" class="btn__atras" id="btn__atras" class="registro__btn">Atrás
             </a>
     
             <label class="label__form" for="phone">Celular</label>
-            <input class="input__form" type="number" id="phone" placeholder="Ingresa el celular">
+            <input class="input__form" type="number" id="phone" placeholder="Ingresa el celular" required>
             
             <label class="label__form" for="name">Nombre</label>
-            <input class="input__form" type="text" id="name" placeholder="Ingresa el nombre" name="nombre">
+            <input class="input__form" type="text" id="name" placeholder="Ingresa el nombre" name="nombre" required>
     
             <label class="label__form" for="password">Contraseña</label>
-            <input class="input__form" type="text" id="password" placeholder="Ingresa la contraseña">
+            <input class="input__form" type="text" id="password" placeholder="Ingresa la contraseña" required>
     
             <label class="label__form" for="foto">Foto</label>
-            <input class="input__form" type="text" id="foto__registro" placeholder="Ingresa la URL de la foto">
+            <input class="input__form" type="text" id="foto__registro" placeholder="Ingresa la URL de la foto" required>
             
             <button class="btn__form" type="submit">Registrar</button>
         </form>
         </fieldset>
         
         `;
-    })
+
+    const registroBoton = contenedorRegistro.querySelector(".btn__form")
+    nuevoUsuario(registroBoton)
+    });
+
 }
 
 
