@@ -815,6 +815,38 @@ input{
     cursor: pointer;
 }
 
+.estado__wpp{
+    width: 50%;
+    position: relative;
+    height: 10rem;
+    top: 4rem;
+    display: flex;
+    background-color: var(--colorGris);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    visibility: hidden;
+}
+.estado__wpp--activa{
+    width: 50%;
+    position: relative;
+    height: 10rem;
+    top: 4rem;
+    display: flex;
+    background-color: var(--colorGris);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    visibility: visible;
+}
+.atras__mensaje{
+    position: absolute;
+    left: 90%;
+    top: 3px;
+    cursor: pointer;
+}
+
+
 @media(max-width: 500px){
     .section__buscar{
         width: 100%;
@@ -920,6 +952,8 @@ input{
     }
     
 }
+
+
 
 
 

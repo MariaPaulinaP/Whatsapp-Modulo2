@@ -1,5 +1,5 @@
 import { APPIS } from "../modulos/appi.js";
-import { contenedorTarjetas, fotoChat, principalContenedor, inputContacto } 
+import { contenedorTarjetas, fotoChat, principalContenedor, inputContacto, estado, estadoWpp } 
 from "../modulos/elementsDom.js";
 import { pintandoMensajesEntrada } from "../service/mensajes.js";
 import { diaSemana, hora, ultimoTiempo, fecha } from "../modulos/luxon.js";
@@ -83,6 +83,31 @@ export const clickTarjetas = ()=>{
 } 
 
 
-
+export const informacion = async () => {
+    estado.addEventListener("click", async() => {
+        const idPrincipal = JSON.parse(localStorage.getItem("identificador"));
+        const idDelcontacto = JSON.parse(
+    localStorage.getItem("identificador-contacto"));
+        let data = await traerContacto()
+        estadoWpp.classList.remove("estado__wpp")
+        estadoWpp.classList.add("estado__wpp--activa")
+        data.forEach(element => {
+                if (idDelcontacto == element.id) {
+                    estadoWpp.innerHTML = `
+                    <img src="/data/x.svg" alt="" class="atras__mensaje">
+                    <h3>Nombre</h3>
+                    <span>${element.Nombre}</span>
+                    <h3>Estado</h3>
+                    <span>${element.Informción}</span>
+                    `
+                    const equisAtras = document.querySelector('.atras__mensaje');
+                    equisAtras.addEventListener("click", () => {
+                        estadoWpp.classList.remove("estado__wpp--activa")
+                        estadoWpp.classList.add("estado__wpp")
+                    })
+                } 
+        })
+    })
+}
 
 

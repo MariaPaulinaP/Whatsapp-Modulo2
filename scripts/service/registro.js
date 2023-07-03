@@ -22,7 +22,6 @@ export const nuevoUsuario = async (boton) =>{
         
        
         const nuevoCelular = inputCelular;
-        console.log(nuevoCelular)
 
         if(inputNombre == "" || inputCelular =="" || inputContraseña == "" || inputUrl ==""){
             Swal.fire({

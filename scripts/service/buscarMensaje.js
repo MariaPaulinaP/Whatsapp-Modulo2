@@ -70,18 +70,6 @@ export const pintarMensaje = async () => {
    
 }
 
-const informacion = () => {
-    estado.addEventListener("click", () => {
-        let data = mostrarMensaje()
-    })
-}
-
-
-
-
-
-                
-
 
 
                 
