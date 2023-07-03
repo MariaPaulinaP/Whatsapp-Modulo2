@@ -68,9 +68,6 @@ export const clickTarjetas = ()=>{
             const nombreContacto = seccion.querySelector(".nombre_contacto").textContent;
             const fotoContacto = seccion.querySelector(".foto_contacto").getAttribute("src");
             // Realizar operaciones con las propiedades obtenidas
-            console.log("Nombre:", nombreContacto);
-            console.log("Foto:", fotoContacto);
-            console.log("id:", idContacto);
     
             principalContenedor.innerHTML = "";
             fotoChat.innerHTML = "";

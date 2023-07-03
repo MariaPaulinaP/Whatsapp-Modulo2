@@ -103,32 +103,3 @@ export const cambiarFoto = async(src) =>{
 
 // const axios = require('axios');
 
-// const array = [
-//   { id: 1, name: 'Objeto 1', foto: 'foto1.jpg' },
-//   { id: 2, name: 'Objeto 2', foto: 'foto2.jpg' },
-//   { id: 3, name: 'Objeto 3', foto: 'foto3.jpg' }
-// ];
-
-// const objetoId = 2;
-// const nuevaFoto = 'nueva_foto.jpg';
-
-// // Encuentra el objeto en el array por su ID
-// const objeto = array.find(item => item.id === objetoId);
-
-// if (objeto) {
-//   // Realiza la solicitud para cambiar la foto
-//   axios.put('URL_DEL_ENDPOINT', { id: objetoId, foto: nuevaFoto })
-//     .then(response => {
-//       // Si la solicitud se realiza correctamente
-//       // Actualiza la foto en el objeto del array
-//       objeto.foto = nuevaFoto;
-
-//       console.log('Foto cambiada con éxito');
-//       console.log(array);
-//     })
-//     .catch(error => {
-//       console.error('Error al cambiar la foto:', error);
-//     });
-// } else {
-//   console.error('Objeto no encontrado en el array');
-// }

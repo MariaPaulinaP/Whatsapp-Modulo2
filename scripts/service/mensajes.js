@@ -72,25 +72,63 @@ export const valorMensaje = () => {
 
 }
 
-// const enviarMensaje = async (mensaje) => {
-//   const idPrincipal = JSON.parse(localStorage.getItem("identificador"));
+const enviarMensaje = async (mensaje) => {
+  const idPrincipal = JSON.parse(localStorage.getItem("identificador"));
+  const idDelcontacto = JSON.parse(
+    localStorage.getItem("identificador-contacto"));
+
+    const data = await traerMensajes();
+    
+    data.forEach( async (element) => {
+    let idUser1 = element.idUser1;
+    let idUser2 = element.idUser2;
+
+    if (idUser1 == idPrincipal && idUser2 == idDelcontacto) {
+       
+      const body = {
+      sendBy: `${idPrincipal}`,
+      date: "20 junio",
+      hour: "3:00",
+      message: mensaje,
+      flag: "null"
+      };
+
+      const prueba = data[0]
+      prueba.conversacion.push(body)
+
+      const urlPrueba = 'https://whatsapp-modulo2-miniback.onrender.com/mensajes'
+
+      try {
+        const response = await axios.put(urlPrueba, body,{
+          // headers: {
+          //   "Content-Type": "application/json",
+          // },
+        });
+        
+        console.log('Mensaje enviado:', response.data);
+      } catch (error) {
+        console.error('Error al enviar el mensaje:', error);
+      }
+
+      
+      console.log(prueba)
+      
+
+    }
+  })
 
 
-//   const body = {
-//     sendBy: idPrincipal,
-//     date: "20 junio",
-//     hour: "3:00",
-//     message: mensaje,
-//     flag: "null"
-//   };
+  
 
-//   try {
-//     const response = await axios.post(APPIS.URL_MENSAJES, body);
-//     console.log('Mensaje enviado:', response.data);
-//   } catch (error) {
-//     console.error('Error al enviar el mensaje:', error);
-//   }
-// };
+
+
+
+ 
+
+  
+};
+
+
 
 // addEventListener('keypress', function(event) {
 //   if (event.key === 'Enter') {

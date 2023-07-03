@@ -1,5 +1,5 @@
 import { APPIS } from "../modulos/appi.js";
-import { buscarMensaje, iconoBuscar, equis, inputBuscarMensaje, contenedorBuscarPrincipal, cerrarMensajes } from "../modulos/elementsDom.js";
+import { buscarMensaje, iconoBuscar, equis, inputBuscarMensaje, contenedorBuscarPrincipal, cerrarMensajes, estado } from "../modulos/elementsDom.js";
 import { hora, diaSemana, fecha } from "../modulos/luxon.js";
 
 export const buscadorMensajes = () => {
@@ -68,6 +68,12 @@ export const pintarMensaje = async () => {
     contenedorBuscarPrincipal.innerHTML = "";
    })
    
+}
+
+const informacion = () => {
+    estado.addEventListener("click", () => {
+        let data = mostrarMensaje()
+    })
 }
 
 

@@ -49,6 +49,7 @@ export const equis = document.querySelector('.quitar')
 export const inputBuscarMensaje = document.querySelector('.input__buscarMensaje')
 export const contenedorBuscarPrincipal = document.querySelector('.buscar__principal')
 export const cerrarMensajes = document.querySelector('.cerrar__mensaje')
+export const estado = document.querySelector('.datos__contacto')
 
 
 
