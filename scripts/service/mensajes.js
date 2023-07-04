@@ -4,8 +4,7 @@ import {
   contenedorEnviarMensaje,
   inputMensaje,
   contenedorMensajes2,
-  contenedorMensajes3,
-  iconoEnviar
+  contenedorMensajes3
 } from "../modulos/elementsDom.js";
 import {
   ahora,
@@ -42,7 +41,7 @@ export const pintandoMensajesEntrada = async () => {
           contenedorMensajes2.innerHTML += `
           <article class="mensaje_entrada">
                    <span class="dia_envio_mensaje">${diaSemana}</span>
-                   <p>${objeto.message} <span class="span__hora ">${hora}</span></p>
+                   <p>${objeto.message} <span class="span__hora ">${objeto.hour}</span></p>
 
           </article>
                    
@@ -124,12 +123,21 @@ const enviarMensaje = async (mensaje) => {
   })
 
   
+
+
+
+ 
+
+  
 };
 
 
 // addEventListener('keypress', function(event) {
 //   if (event.key === 'Enter') {
 //     event.preventDefault()
+
+
+
 
 
 
