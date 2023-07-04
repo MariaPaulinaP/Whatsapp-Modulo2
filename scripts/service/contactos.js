@@ -75,10 +75,10 @@ export const clickTarjetas = ()=>{
             fotoChat.innerHTML = "";
             principalContenedor.innerHTML += `<img src="${fotoContacto}" class="fotico__chat" data-id=${idPrincipal}></img>`
             principalContenedor.innerHTML += `<h1>${nombreContacto}</h1>`
-            principalContenedor.innerHTML += `<span class="estado_perfil">EN LINEA</span>`
+            
 
             let EstadoFlag = document.querySelector(".estado_perfil");
-             conectado(EstadoFlag, idContacto)
+            //  conectado(EstadoFlag, idContacto)
             
             let identificadorContacto = idContacto;
                 identificadorContacto = localStorage.setItem("identificador-contacto",(identificadorContacto))
@@ -89,31 +89,31 @@ export const clickTarjetas = ()=>{
 } 
 
 
-const conectado = (EstadoFlag, idContacto) => {
-    const idPrincipal = JSON.parse(localStorage.getItem('identificador'));
-    let linea = localStorage.getItem('en linea');
-    let iniciarSesion = 1;
+// const conectado = (EstadoFlag, idContacto) => {
+//     const idPrincipal = JSON.parse(localStorage.getItem('identificador'));
+//     let linea = localStorage.getItem('en linea');
+//     let iniciarSesion = 1;
 
-    if (linea !== 'true') {
-        linea = 'false';
-    }
+//     if (linea !== 'true') {
+//         linea = 'false';
+//     }
 
-    if (idPrincipal == iniciarSesion) {
-      linea = 'true';
-      EstadoFlag.style.display = 'block';
-      if(idContacto == idPrincipal){
-        EstadoFlag.classList.remove(".estado_perfil")
-      }
-    }
+//     if (idPrincipal == iniciarSesion) {
+//       linea = 'true';
+//       EstadoFlag.style.display = 'block';
+//       if(idContacto == idPrincipal){
+//         EstadoFlag.classList.remove(".estado_perfil")
+//       }
+//     }
   
-    // Escuchar el evento click para borrar el flag y eliminar el mensaje del Local Storage
-    EstadoFlag.addEventListener('click', () => {
-      localStorage.removeItem('en linea');
-      EstadoFlag.style.display = 'none';
-    });
+//     // Escuchar el evento click para borrar el flag y eliminar el mensaje del Local Storage
+//     EstadoFlag.addEventListener('click', () => {
+//       localStorage.removeItem('en linea');
+//       EstadoFlag.style.display = 'none';
+//     });
   
-    localStorage.setItem('en linea', linea);
-  }
+//     localStorage.setItem('en linea', linea);
+//   }
 
 
 export const informacion = async () => {
