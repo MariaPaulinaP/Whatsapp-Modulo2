@@ -35,14 +35,14 @@ export const pintandoMensajesEntrada = async () => {
     let idUser1 = element.idUser1;
     let idUser2 = element.idUser2;
 
-    if (idUser1 == idPrincipal && idUser2 == idDelcontacto) {
+    if (idUser1 == idPrincipal && idUser2 == idDelcontacto || idUser1 ==idDelcontacto && idUser2 == idPrincipal) {
       element.conversacion.forEach((objeto, index) => {
         if (idUser1 == objeto.sendBy) {
 
           contenedorMensajes2.innerHTML += `
           <article class="mensaje_entrada">
                    <span class="dia_envio_mensaje">${diaSemana}</span>
-                   <p>${objeto.message} <span class="span__hora ">${hora}</span></p>
+                   <p>${objeto.message} <span class="span__hora ">${objeto.hour}</span></p>
 
           </article>
                    
@@ -51,7 +51,7 @@ export const pintandoMensajesEntrada = async () => {
           contenedorMensajes2.innerHTML += `
           <article class="mensaje_salida">  
               <span class="dia_envio_mensaje">${diaSemana}</span>
-              <p>"${objeto.message}" <span class="span__hora">${hora}</span></p>
+              <p>"${objeto.message}" <span class="span__hora">${objeto.hour}</span></p>
           </article>
                   
                 `;
@@ -60,6 +60,8 @@ export const pintandoMensajesEntrada = async () => {
     }
   });
 };
+
+setInterval(pintandoMensajesEntrada, 5000)
 
 // Funcion enviar mensaje
 export const valorMensaje = () => {
@@ -80,39 +82,43 @@ const enviarMensaje = async (mensaje) => {
     const data = await traerMensajes();
     
     data.forEach( async (element) => {
+      
+      
     let idUser1 = element.idUser1;
     let idUser2 = element.idUser2;
 
-    if (idUser1 == idPrincipal && idUser2 == idDelcontacto) {
+    if (idUser1 == idPrincipal && idUser2 == idDelcontacto || idUser1 ==idDelcontacto && idUser2 == idPrincipal) {
+
+      const id = element.id;
+      console.log(id)
+      
+      let arrayConversaciones = element.conversacion; 
+      console.log(arrayConversaciones)
        
       const body = {
       sendBy: `${idPrincipal}`,
-      date: "20 junio",
-      hour: "3:00",
+      date: `${fecha}`,
+      hour: `${hora}` ,
       message: mensaje,
       flag: "null"
       };
 
-      const prueba = data[0]
-      prueba.conversacion.push(body)
+      arrayConversaciones.push(body)
 
-      const urlPrueba = 'https://whatsapp-modulo2-miniback.onrender.com/mensajes'
+      // let prueba = nuevasConversaciones.find(item => item.conversaciones)
+      // console.log(prueba)
+
+      // console.log(nuevasConversaciones)
+
+      // const urlPrueba = 'https://whatsapp-modulo2-miniback.onrender.com/mensajes'
 
       try {
-        const response = await axios.put(urlPrueba, body,{
-          // headers: {
-          //   "Content-Type": "application/json",
-          // },
-        });
+        const response = await axios.patch( `https://whatsapp-modulo2-miniback.onrender.com/mensajes/${id}`, {conversacion:arrayConversaciones});
         
-        console.log('Mensaje enviado:', response.data);
+        console.log('Mensaje enviado:', response);
       } catch (error) {
         console.error('Error al enviar el mensaje:', error);
       }
-
-      
-      console.log(prueba)
-      
 
     }
   })
