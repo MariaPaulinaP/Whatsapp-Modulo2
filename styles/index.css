@@ -278,10 +278,15 @@ input:hover{
     color: black;
 }
 .estado_perfil{
-    font-size: 12px;
+    font-size: 10px;
     color: grey;
     position: relative;
-    top: 5px;
+    top: 25px;
+    background-color: #9BDF46;
+    right: 36%;
+    width: 50px;
+    display: none;
+
 }
 
 main{
@@ -463,6 +468,20 @@ main{
     margin-left: 450px;
     align-items:center; */
 }
+
+
+
+.enviar__mensaje{
+    cursor: pointer;
+}
+
+.mensaje_salida:hover .div__acciones{
+display: block;
+}
+
+.mensaje_entrada:hover .div__acciones{
+    display: block;
+    }
 
 .escribir_mensajes{
     height: 10%;
@@ -847,6 +866,25 @@ input{
     top: 3px;
     cursor: pointer;
 }
+
+.flechita{
+    visibility: hidden;
+    cursor: pointer;
+}
+.flechita:hover .div__acciones{
+    display: block;
+}
+
+/* .acciones{
+    visibility: hidden;
+} */
+/* .acciones--activa{
+    display: block;
+} */
+.div__acciones{
+    display: none;
+}
+
 
 
 @media(max-width: 500px){

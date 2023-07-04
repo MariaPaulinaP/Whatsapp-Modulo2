@@ -3,6 +3,7 @@ import { contenedorTarjetas, fotoChat, principalContenedor, inputContacto, estad
 from "../modulos/elementsDom.js";
 import { pintandoMensajesEntrada } from "../service/mensajes.js";
 import { diaSemana, hora, ultimoTiempo, fecha } from "../modulos/luxon.js";
+// import { conectado } from "./flag.js";
 
 
 export let contactos = undefined
@@ -64,6 +65,7 @@ export const clickTarjetas = ()=>{
         const seccion = e.target.closest(".tarjeta_contacto");
         // Acceder a las propiedades del elemento
         if (seccion) {        
+            const idPrincipal = JSON.parse(localStorage.getItem('identificador'));
             const idContacto = seccion.getAttribute("data-id");
             const nombreContacto = seccion.querySelector(".nombre_contacto").textContent;
             const fotoContacto = seccion.querySelector(".foto_contacto").getAttribute("src");
@@ -71,8 +73,12 @@ export const clickTarjetas = ()=>{
     
             principalContenedor.innerHTML = "";
             fotoChat.innerHTML = "";
-            principalContenedor.innerHTML += `<img src="${fotoContacto}" class="fotico__chat"></img>`
+            principalContenedor.innerHTML += `<img src="${fotoContacto}" class="fotico__chat" data-id=${idPrincipal}></img>`
             principalContenedor.innerHTML += `<h1>${nombreContacto}</h1>`
+            principalContenedor.innerHTML += `<span class="estado_perfil">EN LINEA</span>`
+
+            let EstadoFlag = document.querySelector(".estado_perfil");
+             conectado(EstadoFlag, idContacto)
             
             let identificadorContacto = idContacto;
                 identificadorContacto = localStorage.setItem("identificador-contacto",(identificadorContacto))
@@ -81,6 +87,33 @@ export const clickTarjetas = ()=>{
       });
 
 } 
+
+
+const conectado = (EstadoFlag, idContacto) => {
+    const idPrincipal = JSON.parse(localStorage.getItem('identificador'));
+    let linea = localStorage.getItem('en linea');
+    let iniciarSesion = 1;
+
+    if (linea !== 'true') {
+        linea = 'false';
+    }
+
+    if (idPrincipal == iniciarSesion) {
+      linea = 'true';
+      EstadoFlag.style.display = 'block';
+      if(idContacto == idPrincipal){
+        EstadoFlag.classList.remove(".estado_perfil")
+      }
+    }
+  
+    // Escuchar el evento click para borrar el flag y eliminar el mensaje del Local Storage
+    EstadoFlag.addEventListener('click', () => {
+      localStorage.removeItem('en linea');
+      EstadoFlag.style.display = 'none';
+    });
+  
+    localStorage.setItem('en linea', linea);
+  }
 
 
 export const informacion = async () => {

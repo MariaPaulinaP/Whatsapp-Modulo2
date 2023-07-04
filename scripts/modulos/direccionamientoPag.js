@@ -42,6 +42,7 @@ export const pintarHome = (arrayCargarContactos) =>{
              <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
          </article>
      </article>
+
     
      </div>  
      `
