@@ -464,6 +464,14 @@ main{
     align-items:center; */
 }
 
+.mensaje_salida:hover .div__acciones{
+display: block;
+}
+
+.mensaje_entrada:hover .div__acciones{
+    display: block;
+    }
+
 .escribir_mensajes{
     height: 10%;
     background-color: rgb(243, 243, 243);
@@ -847,6 +855,25 @@ input{
     top: 3px;
     cursor: pointer;
 }
+
+.flechita{
+    visibility: hidden;
+    cursor: pointer;
+}
+.flechita:hover .div__acciones{
+    display: block;
+}
+
+/* .acciones{
+    visibility: hidden;
+} */
+/* .acciones--activa{
+    display: block;
+} */
+.div__acciones{
+    display: none;
+}
+
 
 
 @media(max-width: 500px){
