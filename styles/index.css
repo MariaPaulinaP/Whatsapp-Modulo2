@@ -278,10 +278,15 @@ input:hover{
     color: black;
 }
 .estado_perfil{
-    font-size: 12px;
+    font-size: 10px;
     color: grey;
     position: relative;
-    top: 5px;
+    top: 25px;
+    background-color: #9BDF46;
+    right: 36%;
+    width: 50px;
+    display: none;
+
 }
 
 main{
@@ -462,6 +467,12 @@ main{
     width: 50%;
     margin-left: 450px;
     align-items:center; */
+}
+
+
+
+.enviar__mensaje{
+    cursor: pointer;
 }
 
 .mensaje_salida:hover .div__acciones{

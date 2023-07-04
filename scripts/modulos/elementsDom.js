@@ -45,6 +45,7 @@ export const contenedorMensajes3 = document.querySelector('.mensaje_entrada')
 export const mensajesSalida = document.querySelector('.mensaje_salida')
 export const contenedorEnviarMensaje = document.querySelector('.escribir_mensajes')
 export const inputMensaje = document.querySelector('.input_mensaje')
+export const iconoEnviar = document.querySelector('.enviar__mensaje')
 
 // pagina buscar mensajes
 export const buscarMensaje = document.querySelector('.section__buscar')
@@ -54,6 +55,11 @@ export const inputBuscarMensaje = document.querySelector('.input__buscarMensaje'
 export const contenedorBuscarPrincipal = document.querySelector('.buscar__principal')
 export const cerrarMensajes = document.querySelector('.cerrar__mensaje')
 export const estado = document.querySelector('.datos__contacto')
+
+
+// flag
+
+
 
 
 
