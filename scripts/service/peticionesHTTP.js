@@ -15,7 +15,7 @@ export const VerificarIngreso = async(url, formulario) =>{
         let match = data.find(item => item.Celular === formulario.numero.value && item.Contraseña === formulario.contraseña.value)
         
         if(match){
-            console.log(`Bienvenido ${match.Nombre}`);
+          
                 Swal.fire(
                 'Correcto',
                 'Bienvenido (a) ' + match.Nombre,

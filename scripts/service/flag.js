@@ -11,14 +11,14 @@ export const flag = async() => {
     
     const idPrincipal = JSON.parse(localStorage.getItem("identificador"));
     
-    console.log(idPrincipal)
+    
     usuarios.forEach (async (element,index) => {
         
         if (idPrincipal) {
             
-            console.log(element.Estado);
+            
           {
-                // estadoPerfil.style.display = "block"
+                
                 try {
                     const response = await axios.patch(`${APPIS.URL_USUARIOS}/${idPrincipal}`, {Estado: true});
 

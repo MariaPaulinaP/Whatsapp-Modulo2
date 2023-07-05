@@ -39,7 +39,7 @@ export const pintarHome = (arrayCargarContactos) =>{
 
          <article class="icono_texto_mensaje">
              <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
-             <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+             <p class="mensaje_contacto">Ver los mensajes que tienes con este contacto accede al chat</p>
          </article>
      </article>
 

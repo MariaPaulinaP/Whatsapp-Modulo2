@@ -38,8 +38,9 @@ export const pintandoMensajesEntrada = async () => {
         if (idUser1 == objeto.sendBy) {
 
           contenedorMensajes2.innerHTML += `
+          <span class="dia_envio_mensaje">${diaSemana}</span>
           <article class="mensaje_entrada">
-                   <span class="dia_envio_mensaje">${diaSemana}</span>
+                   
                    <p>${objeto.message}<span class="span__hora ">${objeto.hour}</span></p>
                    <div class="div__acciones">
                    <button class="accion__eliminar" acciones>eliminar</button>
@@ -51,8 +52,9 @@ export const pintandoMensajesEntrada = async () => {
                 `;
         } else {
           contenedorMensajes2.innerHTML += `
+          
           <article class="mensaje_salida">  
-              <span class="dia_envio_mensaje">${diaSemana}</span>
+              
               <p>"${objeto.message}" <span class="span__hora">${objeto.hour}</span></p>
               <div class="div__acciones">
               <button class="accion__eliminar" acciones>eliminar</button>
@@ -106,8 +108,8 @@ export const editar = async (ArrayEditar) => {
                 if (idUser1 == producto.sendBy) {
 
                   contenedorMensajes2.innerHTML += `
+                  
                   <article class="mensaje_entrada">
-                           <span class="dia_envio_mensaje">${diaSemana}</span>
                            <p>${producto.message}<span class="span__hora ">${objeto.hour}</span></p>
                            <div class="div__acciones">
                            <button class="accion__eliminar" acciones>eliminar</button>
@@ -119,8 +121,8 @@ export const editar = async (ArrayEditar) => {
                         `;
                 } else {
                   contenedorMensajes2.innerHTML += `
+                  
                   <article class="mensaje_salida">  
-                      <span class="dia_envio_mensaje">${diaSemana}</span>
                       <p>"${producto.message}" <span class="span__hora">${objeto.hour}</span></p>
                       <div class="div__acciones">
                       <button class="accion__eliminar" acciones>eliminar</button>
@@ -184,8 +186,8 @@ export const eliminar = async (ArrayEliminar) => {
                 if (idUser1 == objeto.sendBy) {
               
                   contenedorMensajes2.innerHTML += `
+                  
                   <article class="mensaje_entrada">
-                           <span class="dia_envio_mensaje">${diaSemana}</span>
                            <p>${element.message}<span class="span__hora ">${element.hour}</span></p>
                            <div class="div__acciones">
                            <button class="accion__eliminar" acciones>eliminar</button>
@@ -197,8 +199,8 @@ export const eliminar = async (ArrayEliminar) => {
                         `;
                 } else {
                   contenedorMensajes2.innerHTML += `
+                  
                   <article class="mensaje_salida">  
-                      <span class="dia_envio_mensaje">${diaSemana}</span>
                       <p>"${element.message}" <span class="span__hora">${element.hour}</span></p>
                       <div class="div__acciones">
                       <button class="accion__eliminar" acciones>eliminar</button>

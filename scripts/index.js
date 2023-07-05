@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
   pintandoMensajesEntrada()
   buscadorMensajes()
   valorMensaje()
-  buscadorMensajes();
   mostrarMensaje();
   pintarMensaje()
   traerMensaje()
+  // editar()
   // conectado()
 
   cerrarSesion.addEventListener("click", () => {
@@ -53,26 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// const ahora = DateTime.now();
-// const fecha = ahora.toLocaleString();
-// const diaSemana = ahora.weekdayLong;
-// const hora = ahora.toLocaleString(DateTime.TIME_SIMPLE);
-// // const ultimoTiempo = ahora.toRelative();
-// const fechaMensajePasado = ahora.toISO();
 
-// // Mostrar la hora generada
-// console.log('Fecha:', fecha);
-// console.log('Día de la semana:', diaSemana);
-// console.log('Hora:', hora);
-// // console.log('Hora actual:', ultimoTiempo);
-// console.log('Hora vieja:', fechaMensajePasado);
-
-
-
-
-
- // console.log(JSON.parse(localStorage.getItem("identificador")));
-  // console.log(JSON.parse(localStorage.getItem("identificador-contacto")));
 
 
 

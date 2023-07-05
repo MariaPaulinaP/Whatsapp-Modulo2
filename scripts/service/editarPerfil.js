@@ -8,7 +8,6 @@ import { APPIS} from "../modulos/appi.js"
 //Mostrar y ocultar ventana de editar perfil 
 export const agregandoPerfil = () => {
     fotoPerfil.addEventListener("click", () => {
-        console.log("hola");
         buscador.classList.add("oculta")
         buscador.classList.remove("contenedor_buscar")
         contenedorTarjetas.classList.add("ocultas")
