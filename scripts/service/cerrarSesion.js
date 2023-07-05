@@ -1,28 +1,27 @@
 import { APPIS } from "../modulos/appi.js";
-import { estadoPerfil } from "../modulos/elementsDom.js";
+import { estadoPerfil, cerrarSesion } from "../modulos/elementsDom.js";
 
 const BaseUsuarios = async() => {
     const { data } = await axios.get(APPIS.URL_USUARIOS)
     return data
 }
 
-export const flag = async() => {
+export const cerrar = async() => {
+
     const usuarios = await BaseUsuarios()
     
     const idPrincipal = JSON.parse(localStorage.getItem("identificador"));
-    
-    console.log(idPrincipal)
+
     usuarios.forEach (async (element,index) => {
         
         if (idPrincipal) {
-            
             console.log(element.Estado);
           {
                 // estadoPerfil.style.display = "block"
                 try {
-                    const response = await axios.patch(`${APPIS.URL_USUARIOS}/${idPrincipal}`, {Estado: true});
+                    const response = await axios.patch(`${APPIS.URL_USUARIOS}/${idPrincipal}`, {Estado: false});
 
-                    // console.log(usuarios);
+                    console.log(usuarios);
                 } catch (error) {
                     console.log(error, "fallo el flag");
                 }
@@ -31,6 +30,6 @@ export const flag = async() => {
             }
         }
     });
-
-
+    localStorage.removeItem('identificador')
+    location.reload()
 }

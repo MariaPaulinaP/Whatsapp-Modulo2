@@ -1,12 +1,16 @@
 //Importacion de variables y funciones
 import { btnInicio, pintarRegistro } from "../scripts/modulos/direccionamientoPag.js";
 import { BuscandoContacto, pintarBusquedad, clickTarjetas } from "./service/contactos.js";
-import { inputContacto } from "../scripts/modulos/elementsDom.js";
+import { inputContacto, cerrarSesion} from "../scripts/modulos/elementsDom.js";
 import { agregandoPerfil, editarPerfil } from "../scripts/service/editarPerfil.js";
 import { nuevoUsuario } from "./service/registro.js";
-import { traerMensajes, pintandoMensajesEntrada, valorMensaje } from "./service/mensajes.js";
+import { traerMensajes, pintandoMensajesEntrada } from "./service/mensajes.js";
 import { buscadorMensajes, mostrarMensaje, pintarMensaje } from "./service/buscarMensaje.js";
 import { ultimoTiempo } from "./modulos/luxon.js";
+import { valorMensaje, traerMensaje } from "../scripts/service/enviarMensaje.js";
+import { flag } from "./service/flag.js";
+import { cerrar } from "../scripts/service/cerrarSesion.js"
+
 // import { conectado } from "./service/flag.js";
 
 
@@ -39,7 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
   buscadorMensajes();
   mostrarMensaje();
   pintarMensaje()
+  traerMensaje()
   // conectado()
+
+  cerrarSesion.addEventListener("click", () => {
+    cerrar()
+})
+
 });
 
 
