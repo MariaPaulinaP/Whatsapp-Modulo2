@@ -285,8 +285,17 @@ input:hover{
     background-color: #9BDF46;
     right: 36%;
     width: 50px;
-    display: none;
-
+    display: block;
+}
+.estado_perfil--activa{
+    font-size: 10px;
+    color: grey;
+    position: relative;
+    top: 25px;
+    background-color: #9BDF46;
+    right: 36%;
+    width: 50px;
+    display: block;
 }
 
 main{
@@ -441,9 +450,13 @@ main{
     max-width: 50%;
     display: flex;
     flex-direction: column;
-    align-content: start;
+    /* align-content: start;
     margin-left: 1rem;
-    align-self: flex-start;
+    align-self: flex-start; */
+    align-content:end;
+    align-self: flex-end;
+    margin-right: 1rem;
+    flex-direction: column;
     
 }
 
@@ -453,10 +466,16 @@ main{
     background-color: rgb(210, 255, 199);
     max-width: 52%;
     display: flex;
-    align-content:end;
+    align-content: start;
+    margin-left: 1rem;
+    align-self: flex-start;
+    
+    /* align-content:end;
     align-self: flex-end;
     margin-right: 1rem;
-    flex-direction: column;
+    flex-direction: column; */
+
+    
     /* position: relative; */
     /* left: 500px;    */
     
@@ -824,6 +843,33 @@ input{
 
 
 .editar__header{
+    width: 30%;
+    height: 32%;
+    color: var(--gris);
+    background-color: var(--grisOscuro);
+    border: none;
+    top: 23px;
+    left: 25px;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.editar__header--cerrar{
+    width: 30%;
+    height: 32%;
+    color: var(--gris);
+    background-color: var(--grisOscuro);
+    border: none;
+    top: 23px;
+    left: 25px;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.editar__header2{
     width: 36%;
     height: 32%;
     color: var(--gris);
@@ -1018,6 +1064,7 @@ input{
         display:none;
     }
     
+    
     .escribir_mensajes{
         display:none; 
     }
@@ -1063,6 +1110,8 @@ input{
         position: relative;
         left: 240px;
     }
+    
+    
 
     .tarjeta_contacto{
         width: 100%;

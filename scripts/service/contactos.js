@@ -1,5 +1,5 @@
 import { APPIS } from "../modulos/appi.js";
-import { contenedorTarjetas, fotoChat, principalContenedor, inputContacto, estado, estadoWpp } 
+import { contenedorTarjetas, fotoChat, principalContenedor, inputContacto, estado, estadoWpp, cerrarSesion } 
 from "../modulos/elementsDom.js";
 import { pintandoMensajesEntrada } from "../service/mensajes.js";
 import { diaSemana, hora, ultimoTiempo, fecha } from "../modulos/luxon.js";
@@ -18,6 +18,7 @@ export const traerContacto = async() => {
 export const BuscandoContacto = async (input) => {
     try {
         const { data } = await axios.get(`${APPIS.URL_USUARIOS}?Nombre_like=${input}`);
+        
         return data
     } catch (error) {
         console.log(error);
@@ -31,8 +32,9 @@ export const pintarBusquedad = async () => {
    
     contenedorTarjetas.innerHTML = ""
     dataBuscar.forEach(element => {
+        
         contenedorTarjetas.innerHTML += `   
-        <div class="tarjeta_contacto" data-id="${element.id}">
+        <div class="tarjeta_contacto" data-id="${element.id} data-flag="${element.Estado}">
 
             <article class="union_foto_contacto">
                 <img class="foto_contacto" src=${element.Foto} alt="contacto1">
@@ -65,8 +67,10 @@ export const clickTarjetas = ()=>{
         const seccion = e.target.closest(".tarjeta_contacto");
         // Acceder a las propiedades del elemento
         if (seccion) {        
+            // const enLinea = flocalStorage.getItem('enLinea');
             const idPrincipal = JSON.parse(localStorage.getItem('identificador'));
             const idContacto = seccion.getAttribute("data-id");
+            const flag = seccion.getAttribute("data-flag");
             const nombreContacto = seccion.querySelector(".nombre_contacto").textContent;
             const fotoContacto = seccion.querySelector(".foto_contacto").getAttribute("src");
             // Realizar operaciones con las propiedades obtenidas
@@ -75,6 +79,15 @@ export const clickTarjetas = ()=>{
             fotoChat.innerHTML = "";
             principalContenedor.innerHTML += `<img src="${fotoContacto}" class="fotico__chat" data-id=${idPrincipal}></img>`
             principalContenedor.innerHTML += `<h1>${nombreContacto}</h1>`
+
+
+            if (flag == 'true'){
+                principalContenedor.innerHTML += `<span class="estado_perfil">EN LINEA</span>`
+            }
+            else{
+                principalContenedor.innerHTML += `<span class="estado_perfil">DESCONECTADO</span>`
+            }
+            
             
 
             let EstadoFlag = document.querySelector(".estado_perfil");
@@ -89,31 +102,6 @@ export const clickTarjetas = ()=>{
 } 
 
 
-// const conectado = (EstadoFlag, idContacto) => {
-//     const idPrincipal = JSON.parse(localStorage.getItem('identificador'));
-//     let linea = localStorage.getItem('en linea');
-//     let iniciarSesion = 1;
-
-//     if (linea !== 'true') {
-//         linea = 'false';
-//     }
-
-//     if (idPrincipal == iniciarSesion) {
-//       linea = 'true';
-//       EstadoFlag.style.display = 'block';
-//       if(idContacto == idPrincipal){
-//         EstadoFlag.classList.remove(".estado_perfil")
-//       }
-//     }
-  
-//     // Escuchar el evento click para borrar el flag y eliminar el mensaje del Local Storage
-//     EstadoFlag.addEventListener('click', () => {
-//       localStorage.removeItem('en linea');
-//       EstadoFlag.style.display = 'none';
-//     });
-  
-//     localStorage.setItem('en linea', linea);
-//   }
 
 
 export const informacion = async () => {

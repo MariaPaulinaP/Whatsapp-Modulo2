@@ -1,5 +1,6 @@
 import { APPIS } from "../modulos/appi.js";
 import { pintarHome } from "../modulos/direccionamientoPag.js";
+import { flag } from "../service/flag.js"
 
 //Funcion para verificar usuario y contraseña
 
@@ -14,7 +15,7 @@ export const VerificarIngreso = async(url, formulario) =>{
         let match = data.find(item => item.Celular === formulario.numero.value && item.Contraseña === formulario.contraseña.value)
         
         if(match){
-            console.log(`Bienvenido ${match.Nombre}`);
+          
                 Swal.fire(
                 'Correcto',
                 'Bienvenido (a) ' + match.Nombre,
@@ -25,7 +26,8 @@ export const VerificarIngreso = async(url, formulario) =>{
                 idUsuario = localStorage.setItem("identificador",(idUsuario))
                  let idUsuarioR = JSON.parse(localStorage.getItem("identificador"))
 
-            trayendoContactos();
+                 flag()
+                 trayendoContactos();
                 
                   
             }
@@ -53,7 +55,10 @@ export const trayendoContactos = async(data = null) => {
             const llamarContactos = {
                 Foto: element.Foto,
                 Nombre: element.Nombre,
-                Id: element.id,
+                Id: element.id, 
+                Estado: element.Estado
+
+
             }
             nuevosContactos.push(llamarContactos)
             

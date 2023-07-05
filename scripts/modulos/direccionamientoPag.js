@@ -23,9 +23,9 @@ export const pintarHome = (arrayCargarContactos) =>{
      contenedorTarjetas.innerHTML = ``;
      arrayCargarContactos.forEach((element, index) =>{
         
-         
+   
      contenedorTarjetas.innerHTML += `
-     <div class="tarjeta_contacto" data-id="${element.Id}">
+     <div class="tarjeta_contacto" data-id="${element.Id}" data-flag="${element.Estado}">
 
      <article class="union_foto_contacto">
          <img class="foto_contacto" src=${element.Foto} alt="contacto1">
@@ -39,7 +39,7 @@ export const pintarHome = (arrayCargarContactos) =>{
 
          <article class="icono_texto_mensaje">
              <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
-             <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+             <p class="mensaje_contacto">Ver los mensajes que tienes con este contacto accede al chat</p>
          </article>
      </article>
 

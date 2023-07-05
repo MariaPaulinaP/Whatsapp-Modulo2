@@ -59,6 +59,8 @@ export const estado = document.querySelector('.datos__contacto')
 
 // flag
 
+export const estadoPerfil = document.querySelector('.estado_perfil')
+export const cerrarSesion = document.querySelector('.editar__header--cerrar')
 
 
 
