@@ -11,6 +11,8 @@ import {
     ultimoTiempo,
   } from "../modulos/luxon.js";
 
+
+
 //Funcion que pinta interfaz home y tarjetas contactos
 export const pintarHome = (arrayCargarContactos) =>{
 
@@ -38,7 +40,7 @@ export const pintarHome = (arrayCargarContactos) =>{
          </article>
 
          <article class="icono_texto_mensaje">
-             <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
+             
              <p class="mensaje_contacto">Ver los mensajes que tienes con este contacto accede al chat</p>
          </article>
      </article>
@@ -75,7 +77,7 @@ export const btnInicio = () => {
         contenedorInicioSesion.innerHTML = "";
         contenedorInicioSesion.innerHTML += `
         <section class="inicio">
-        <a href="../html/index.html" class="btn__atras" id="btn__atras">Atrás
+        <a href="../../index.html" class="btn__atras" id="btn__atras">Atrás
         </a>
         <form id="formulario">
             <fieldset class="recuadro">
@@ -94,7 +96,7 @@ export const btnInicio = () => {
             </fieldset>
         </form>
         <div class="inicial__secundario">
-            <img src="/data/imagenwpp.svg" alt="">
+            <img src="./app/data/Icons/imagenwpp.svg" alt="">
             <span class="spn__wpp">Whatsapp</span>
 
         </div>
@@ -104,6 +106,7 @@ export const btnInicio = () => {
     entrando(btnEntrar)   
     });
 }   
+
 
 // pintar formulario de registro
 export const pintarRegistro = () => { 
@@ -119,7 +122,7 @@ export const pintarRegistro = () => {
 
             <form action="" class="formulario__registro">
 
-            <a href="../html/index.html" class="btn__atras" id="btn__atras" class="registro__btn">Atrás
+            <a href="../../index.html" class="btn__atras" id="btn__atras" class="registro__btn">Atrás
             </a>
     
             <label class="label__form" for="phone">Celular</label>

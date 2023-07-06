@@ -34,7 +34,7 @@ export const pintarBusquedad = async () => {
     dataBuscar.forEach(element => {
         
         contenedorTarjetas.innerHTML += `   
-        <div class="tarjeta_contacto" data-id="${element.id} data-flag="${element.Estado}">
+        <div class="tarjeta_contacto" data-id="${element.id}" data-flag="${element.Estado}">
 
             <article class="union_foto_contacto">
                 <img class="foto_contacto" src=${element.Foto} alt="contacto1">
@@ -47,8 +47,7 @@ export const pintarBusquedad = async () => {
                 </article>
 
             <article class="icono_texto_mensaje">
-                <img class="icono_ckeck" src="../data/Icons/check.svg" alt="check">
-                <p class="mensaje_contacto">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p class="mensaje_contacto">Aquí puedes ingresar para visualizar los mensajes con el contacto</p>
             </article>
             </article>
 
@@ -115,7 +114,7 @@ export const informacion = async () => {
         data.forEach(element => {
                 if (idDelcontacto == element.id) {
                     estadoWpp.innerHTML = `
-                    <img src="/data/x.svg" alt="" class="atras__mensaje">
+                    <img src="https://cdn.icon-icons.com/icons2/1238/PNG/512/letterx_83737.png" alt="" class="atras__mensaje">
                     <h3>Nombre</h3>
                     <span>${element.Nombre}</span>
                     <h3>Estado</h3>

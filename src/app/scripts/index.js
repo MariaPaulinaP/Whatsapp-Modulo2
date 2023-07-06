@@ -1,4 +1,6 @@
 //Importacion de variables y funciones
+import "../styles/index.css";
+
 import { btnInicio, pintarRegistro } from "../scripts/modulos/direccionamientoPag.js";
 import { BuscandoContacto, pintarBusquedad, clickTarjetas } from "./service/contactos.js";
 import { inputContacto, cerrarSesion} from "../scripts/modulos/elementsDom.js";
@@ -10,6 +12,7 @@ import { ultimoTiempo } from "./modulos/luxon.js";
 import { valorMensaje, traerMensaje } from "../scripts/service/enviarMensaje.js";
 import { flag } from "./service/flag.js";
 import { cerrar } from "../scripts/service/cerrarSesion.js"
+
 
 // import { conectado } from "./service/flag.js";
 

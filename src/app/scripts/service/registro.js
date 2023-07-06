@@ -80,7 +80,7 @@ const agregarUsuario = (newUsuario) =>{
         Swal.fire({
             icon: 'error',
             title: 'Usuario no registrado',
-            footer: '<a href="">Regresa a la página de inicio</a>'
+            footer: '<a href="../../index.html">Regresa a la página de inicio</a>'
         })
         console.log('Usuario no agregado exitosamente', error)
 
